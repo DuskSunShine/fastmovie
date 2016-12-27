@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">极速电影</string>
+    <string name="chengdu">成都</string>
+    <string name="hot">热映</string>
+    <string name="wait">待映</string>
+    <string name="seek">找片</string>
+    <string name="movie">电影</string>
+    <string name="cinema">影院</string>
+    <string name="discover">发现</string>
 </resources>
