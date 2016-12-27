@@ -33,12 +33,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name="MyApplication"
+        android:name=".MyApplication"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="luuHMb7AYWQN999Si2TsQ6dYAnuyADXC" />
-        <activity android:name="activity.MainActivity">
+        <activity android:name="com.scy.fastmovie.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

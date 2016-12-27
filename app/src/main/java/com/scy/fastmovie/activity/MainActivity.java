@@ -1,4 +1,4 @@
-package activity;
+package com.scy.fastmovie.activity;
 
 import android.os.Bundle;
 

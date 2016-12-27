@@ -1,4 +1,4 @@
-package utils;
+package com.scy.fastmovie.utils;
 
 import android.content.Context;
 

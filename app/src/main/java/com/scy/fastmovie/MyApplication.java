@@ -1,3 +1,5 @@
+package com.scy.fastmovie;
+
 import android.app.Application;
 
 import com.baidu.mapapi.SDKInitializer;
