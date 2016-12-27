@@ -35,7 +35,7 @@
                     android:scaleType="centerInside"
                     android:layout_height="18dp" />
                 <RadioGroup
-                    android:padding="1dp"
+                    android:padding="3dp"
                     android:background="@drawable/radio_group"
                     android:id="@+id/rgb"
                     android:orientation="horizontal"
