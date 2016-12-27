@@ -3,11 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.scy.fastmovie.fragment.DiscoverFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/discover_toolbar"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <EditText
+                android:id="@+id/search_edit"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:hint="@string/search_news"
+                android:singleLine="true"
+                android:paddingLeft="120dp"
+                android:drawablePadding="10dp"
+                android:textColor="@color/hui"
+                android:drawableLeft="@mipmap/a1v"
+                android:background="@drawable/search_shape"/>
+        </android.support.v7.widget.Toolbar>
+    </LinearLayout>
+    
 
 </FrameLayout>
