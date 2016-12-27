@@ -1,3 +1,4 @@
+apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.android.application'
 
 android {
@@ -38,4 +39,5 @@ dependencies {
     }
     compile project(':ptr_lib')
     compile files('src/main/jniLibs/BaiduLBS_Android.jar')
+    compile 'org.greenrobot:greendao:3.2.0'
 }
