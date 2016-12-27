@@ -1,0 +1,90 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.MovieFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="50dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:id="@+id/tv_heard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chengdu"
+                    android:textColor="@color/white"
+                    />
+                <ImageButton
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/tv_heard"
+                    android:src="@mipmap/xi"
+                    android:background="@null"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="18dp"
+                    android:scaleType="centerInside"
+                    android:layout_height="18dp" />
+                <RadioGroup
+                    android:padding="1dp"
+                    android:background="@drawable/radio_group"
+                    android:id="@+id/rgb"
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/hot"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:button="@null"
+                        android:layout_width="wrap_content"
+                        android:text="@string/hot"
+                        android:textColor="@drawable/rb_tv_color"
+                        android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:id="@+id/wait"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:button="@null"
+                        android:layout_width="wrap_content"
+                        android:text="@string/wait"
+                        android:textColor="@drawable/rb_tv_color"
+                        android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:id="@+id/seek"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:button="@null"
+                        android:layout_width="wrap_content"
+                        android:text="@string/seek"
+                        android:textColor="@drawable/rb_tv_color"
+                        android:layout_height="wrap_content" />
+                </RadioGroup>
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v4.view.ViewPager>
+        </RelativeLayout>
+
+</FrameLayout>

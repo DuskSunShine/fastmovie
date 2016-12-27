@@ -5,82 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.scy.fastmovie.activity.MainActivity">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        android:layout_height="50dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:layout_centerVertical="true"
-                android:id="@+id/tv_heard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/chengdu"
-                android:textColor="@color/white"
-                />
-            <ImageButton
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@id/tv_heard"
-                android:src="@mipmap/xi"
-                android:background="@null"
-                android:layout_marginLeft="5dp"
-                android:layout_width="18dp"
-                android:scaleType="centerInside"
-                android:layout_height="18dp" />
-            <RadioGroup
-                android:padding="1dp"
-                android:background="@drawable/radio_group"
-                android:id="@+id/rgb"
-                android:orientation="horizontal"
-                android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <RadioButton
-                    android:id="@+id/hot"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:button="@null"
-                    android:layout_width="wrap_content"
-                    android:text="@string/hot"
-                    android:textColor="@drawable/rb_tv_color"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:id="@+id/wait"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:button="@null"
-                    android:layout_width="wrap_content"
-                    android:text="@string/wait"
-                    android:textColor="@drawable/rb_tv_color"
-                    android:layout_height="wrap_content" />
-                <RadioButton
-                    android:id="@+id/seek"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:button="@null"
-                    android:layout_width="wrap_content"
-                    android:text="@string/seek"
-                    android:textColor="@drawable/rb_tv_color"
-                    android:layout_height="wrap_content" />
-            </RadioGroup>
-        </RelativeLayout>
-    </android.support.v7.widget.Toolbar>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_below="@id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="50dp">
 
-    </android.support.v4.view.ViewPager>
+    </LinearLayout>
     <RadioGroup
         android:id="@+id/rgb_bottom"
         android:background="@color/hui"
@@ -97,6 +29,7 @@
             android:layout_weight="1"
             android:textSize="12sp"
             android:button="@null"
+            android:textColor="@drawable/rb_bottom_tv_selector"
             android:text="@string/movie"
             android:layout_height="match_parent" />
         <RadioButton
@@ -105,6 +38,7 @@
             android:layout_weight="1"
             android:textSize="12sp"
             android:button="@null"
+            android:textColor="@drawable/rb_bottom_tv_selector"
             android:text="@string/cinema"
             android:layout_height="match_parent" />
         <RadioButton
@@ -113,6 +47,7 @@
             android:layout_weight="1"
             android:textSize="12sp"
             android:button="@null"
+            android:textColor="@drawable/rb_bottom_tv_selector"
             android:text="@string/discover"
             android:layout_height="match_parent" />
         <RadioButton
@@ -121,7 +56,8 @@
             android:layout_weight="1"
             android:textSize="12sp"
             android:button="@null"
-            android:text="@string/cinema"
+            android:text="@string/mine"
+            android:textColor="@drawable/rb_bottom_tv_selector"
             android:layout_height="match_parent" />
     </RadioGroup>
 </RelativeLayout>
