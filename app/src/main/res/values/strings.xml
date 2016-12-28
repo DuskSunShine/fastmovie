@@ -13,4 +13,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search_news">查找资讯</string>
     <string name="cancel">取消</string>
+    <string name="top1">今日TOP10</string>
+    <string name="kuaixun">影视快讯</string>
+    <string name="piaofang">实时票房</string>
 </resources>
