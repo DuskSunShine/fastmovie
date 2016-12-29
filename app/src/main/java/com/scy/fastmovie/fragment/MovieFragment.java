@@ -10,10 +10,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
+import com.baidu.mapapi.map.MapView;
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.adapter.FragmentAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +36,11 @@ public class MovieFragment extends Fragment {
     private RadioButton rb_wait;
     private RadioButton rb_seek;
     private ViewPager pager;
+    private List<Fragment>data=new ArrayList<>();
+    private FragmentAdapter adapter;
+    private LinearLayout linearLayout;
+    private Spinner spinner;
+
 
     public MovieFragment() {
         // Required empty public constructor
@@ -46,6 +59,9 @@ public class MovieFragment extends Fragment {
         rb_hot.setBackgroundResource(R.drawable.top_checked_shape);
         rb_wait.setBackgroundResource(R.drawable.top_unchecked_shape);
         rb_seek.setBackgroundResource(R.drawable.top_unchecked_shape);
+        spinner.setVisibility(View.INVISIBLE);
+        adapter = new FragmentAdapter(getChildFragmentManager(), data);
+        pager.setAdapter(adapter);
         return view;
     }
 
@@ -78,6 +94,25 @@ public class MovieFragment extends Fragment {
                 }
             }
         });
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                spinner.setVisibility(View.VISIBLE);
+                linearLayout.setVisibility(View.INVISIBLE);
+            }
+        });
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                spinner.setVisibility(View.INVISIBLE);
+                linearLayout.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -105,6 +140,13 @@ public class MovieFragment extends Fragment {
         rb_wait = ((RadioButton) view.findViewById(R.id.wait));
         rb_seek = ((RadioButton) view.findViewById(R.id.seek));
         pager = ((ViewPager) view.findViewById(R.id.pager));
+        linearLayout = ((LinearLayout) view.findViewById(R.id.linearlaout));
+        spinner = ((Spinner) view.findViewById(R.id.spinner));
+
+        data.add(new HotFragment());
+        data.add(new WaitFragment());
+        data.add(new SeekFragment());
     }
+
 
 }

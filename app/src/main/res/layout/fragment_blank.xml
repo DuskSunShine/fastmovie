@@ -17,23 +17,38 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                <TextView
+
+                <LinearLayout
+                    android:id="@+id/linearlaout"
+                    android:descendantFocusability="blocksDescendants"
                     android:layout_centerVertical="true"
-                    android:id="@+id/tv_heard"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/chengdu"
-                    android:textColor="@color/white"
-                    />
-                <ImageButton
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/tv_heard"
-                    android:src="@mipmap/xi"
-                    android:background="@null"
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="18dp"
-                    android:scaleType="centerInside"
-                    android:layout_height="18dp" />
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:background="@null"
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    </Spinner>
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:id="@+id/tv_heard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        />
+                    <ImageButton
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/tv_heard"
+                        android:src="@mipmap/xi"
+                        android:background="@null"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="18dp"
+                        android:scaleType="centerInside"
+                        android:layout_height="18dp" />
+                </LinearLayout>
                 <RadioGroup
                     android:padding="3dp"
                     android:background="@drawable/radio_group"

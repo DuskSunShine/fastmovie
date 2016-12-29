@@ -16,4 +16,6 @@
     <string name="top1">今日TOP10</string>
     <string name="kuaixun">影视快讯</string>
     <string name="piaofang">实时票房</string>
+    <string name="audience">观众</string>
+    <string name="buy_ticket">购票</string>
 </resources>
