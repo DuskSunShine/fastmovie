@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="debug"><source path="C:\studio\fastmovie\ptr_lib\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="C:\studio\fastmovie\ptr_lib\src\androidTest\assets"/><source path="C:\studio\fastmovie\ptr_lib\build\generated\assets\shaders\androidTest\debug"/></dataSet></merger>
+<merger version="3"><dataSet config="debug"><source path="E:\AndroidS\androidtools\fastmovie\ptr_lib\build\intermediates\bundles\debug\assets"/></dataSet><dataSet config="main"><source path="E:\AndroidS\androidtools\fastmovie\ptr_lib\src\androidTest\assets"/><source path="E:\AndroidS\androidtools\fastmovie\ptr_lib\build\generated\assets\shaders\androidTest\debug"/></dataSet></merger>
