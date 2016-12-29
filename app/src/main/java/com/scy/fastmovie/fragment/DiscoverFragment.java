@@ -56,6 +56,7 @@ public class DiscoverFragment extends Fragment implements
     public void onAttach(Context context) {
         super.onAttach(context);
         this.context=context;
+        
     }
 
     @Override
