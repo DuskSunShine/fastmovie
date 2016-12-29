@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView 
+<android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:layout_margin="10dp">
+    android:layout_height="200dp"
+    android:layout_margin="10dp"
+    app:cardElevation="5dp"
+    app:cardPreventCornerOverlap="true">
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +16,7 @@
             android:layout_margin="10dp"
             android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/discover_img"
@@ -22,22 +24,27 @@
                 android:layout_width="120dp"
                 android:layout_height="90dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_launcher"/>
-            <TextView
-                android:id="@+id/discover_text"
-                android:layout_marginLeft="10dp"
+                />
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="极速资讯"
-                android:layout_below="@+id/discover_img"/>
-            <TextView
-                android:id="@+id/discover_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_below="@+id/discover_img"
-                android:layout_toRightOf="@+id/discover_text"
-                android:text="2小时请"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:id="@+id/discover_text"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/discover_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/discover_text"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+            
         </RelativeLayout>
         <!--右边-->
         <RelativeLayout
@@ -48,9 +55,9 @@
             <TextView
                 android:id="@+id/discover_text2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="高规格"
-                android:layout_margin="10dp"/>
+                android:layout_height="90dp"
+                android:layout_margin="10dp"
+                android:textSize="16sp"/>
             <LinearLayout
                 android:layout_margin="10dp"
                 android:layout_alignParentRight="true"
@@ -64,10 +71,10 @@
                    android:scaleType="centerCrop"
                    android:src="@mipmap/zw"/>
                 <TextView
+                    android:id="@+id/discover_text8"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" 
-                    android:text="111"/>
+                    android:layout_height="wrap_content"/>
                 <ImageView
                     android:layout_marginLeft="10dp"
                     android:layout_width="wrap_content"
@@ -75,10 +82,10 @@
                     android:scaleType="centerCrop"
                     android:src="@mipmap/zx"/>
                 <TextView
+                    android:id="@+id/discover_text7"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="111"/>
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
             
         </RelativeLayout>
