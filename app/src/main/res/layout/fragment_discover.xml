@@ -27,9 +27,7 @@
                 android:background="@drawable/search_shape" />
         </android.support.v7.widget.Toolbar>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    
         <com.handmark.pulltorefresh.library.PullToRefreshListView
             android:id="@+id/search_list"
             android:layout_width="match_parent"
@@ -37,6 +35,6 @@
             app:ptrHeaderTextColor="#238ac6"
             >
         </com.handmark.pulltorefresh.library.PullToRefreshListView>
-    </LinearLayout>
+    
 
 </LinearLayout>
