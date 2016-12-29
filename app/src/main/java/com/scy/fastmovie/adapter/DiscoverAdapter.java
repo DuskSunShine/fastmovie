@@ -9,7 +9,7 @@ import com.scy.fastmovie.bean.DiscoverBean;
 
 import java.util.List;
 
-/**
+/**发现界面--适配器
  * Created by SCY on 2016/12/28 19:46.
  */
 

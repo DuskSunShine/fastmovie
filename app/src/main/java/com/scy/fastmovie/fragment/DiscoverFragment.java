@@ -58,12 +58,12 @@ public class DiscoverFragment extends Fragment implements PullToRefreshBase.OnRe
         setListener();
         search_list.setMode(PullToRefreshBase.Mode.BOTH);
         search_list.setOnRefreshListener(this);
+        
         discoverAdapter=new DiscoverAdapter(mainActivity);
-        // TODO: 2016/12/28 添加getData方法添加空数据 
-        discoverAdapter.setData(data);
         search_list.setAdapter(discoverAdapter);
+        
         search_list.setRefreshing();
-       
+        
         return view;
     }
 
