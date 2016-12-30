@@ -52,9 +52,16 @@
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
-            android:process=":remote"></service>
+            android:process=":remote" />
 
-        <activity android:name=".activity.SearchNewsResultActivity"></activity>
+        <activity android:name=".activity.SearchNewsResultActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegstActivity" />
+        <activity android:name=".activity.WantToSeeActivity" />
+        <activity android:name=".activity.ToTakeALookAt" />
+        <activity android:name=".activity.FilmReview" />
+        <activity android:name=".activity.SubjiectOfTalkActivity" />
+        <activity android:name=".activity.OrderForGoodsActivity"></activity>
     </application>
 
 </manifest>

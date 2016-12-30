@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.scy.fastmovie.fragment.MineFragment">
 <LinearLayout
     android:layout_width="match_parent"
@@ -12,13 +14,18 @@
        android:layout_width="match_parent"
        android:layout_height="100dp"
        android:background="@color/colorPrimary">
-       <ImageView
+       <com.makeramen.roundedimageview.RoundedImageView
            android:id="@+id/userhead"
            android:layout_width="80dp"
            android:layout_height="80dp"
+           app:riv_corner_radius="50dp"
+           app:riv_border_color="#fff"
+           app:riv_border_width="1dp"
            android:layout_centerVertical="true"
-           android:src="@mipmap/ic_launcher"
+           android:src="@mipmap/adu"
            android:layout_marginLeft="20dp"
+           app:riv_oval="true"
+           android:scaleType="centerCrop"
            />
        <TextView
            android:id="@+id/login"
@@ -34,7 +41,7 @@
        <ImageView
            android:layout_width="15dp"
            android:layout_height="25dp"
-           android:src="@drawable/dxu"
+           android:src="@mipmap/dxu"
            android:layout_alignParentRight="true"
            android:layout_marginRight="10dp"
            android:layout_centerVertical="true"
@@ -45,7 +52,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp">
        <Button
-           android:id="@+id/wantlook"
+           android:id="@+id/wanttosee"
            android:layout_weight="1"
            android:layout_width="0dp"
            android:layout_height="wrap_content"
@@ -119,6 +126,8 @@
         android:layout_marginTop="10dp"
         />
     <RelativeLayout
+        android:id="@+id/myorder"
+        android:descendantFocusability="blocksDescendants"
         android:layout_width="match_parent"
         android:layout_height="40dp"
        >
@@ -134,7 +143,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -221,7 +230,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -248,7 +257,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -275,7 +284,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -308,7 +317,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -335,7 +344,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -362,7 +371,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -389,7 +398,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -422,7 +431,7 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="20dp"
-            android:src="@drawable/dxu"
+            android:src="@mipmap/dxu"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
@@ -439,6 +448,5 @@
         android:background="#ccc"
         android:layout_marginTop="20dp"
         />
-
 </LinearLayout>
 </ScrollView>
