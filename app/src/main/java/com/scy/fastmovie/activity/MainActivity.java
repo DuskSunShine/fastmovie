@@ -17,6 +17,7 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.MapView;
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.fragment.CinemaFragment;
+import com.scy.fastmovie.fragment.DiscoverFragment;
 import com.scy.fastmovie.fragment.MineFragment;
 import com.scy.fastmovie.fragment.MovieFragment;
 

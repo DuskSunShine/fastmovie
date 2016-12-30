@@ -1,5 +1,6 @@
 package com.scy.fastmovie.bean;
 
+
 import java.util.List;
 
 /**发现页面实体类

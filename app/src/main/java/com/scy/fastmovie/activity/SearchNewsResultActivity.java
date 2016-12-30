@@ -42,6 +42,7 @@ public class SearchNewsResultActivity extends AppCompatActivity {
             public void onClick(View v) {
                 search_edit_result.setText("");
                 finish();
+                overridePendingTransition(0,0);
             }
         });
     }

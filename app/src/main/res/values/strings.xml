@@ -18,4 +18,6 @@
     <string name="piaofang">实时票房</string>
     <string name="audience">观众</string>
     <string name="buy_ticket">购票</string>
+    <string name="zixun">资讯</string>
+    <string name="topic">话题</string>
 </resources>

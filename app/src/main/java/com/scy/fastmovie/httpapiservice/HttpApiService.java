@@ -18,7 +18,7 @@ public interface HttpApiService {
             @Query("offset") String offset,
             @Query("limit") String limit
     );
-
+    @GET("mmdb/movie/v3/list/hot.json?")
     Observable<HotFragmentBean>getHotData(
             @Query("__reqTraceID")String __reqTraceID,@Query("__skck")String __skck,
             @Query("__skcy")String __skcy,@Query("__skno")String __skno,@Query("__skts")String __skts,

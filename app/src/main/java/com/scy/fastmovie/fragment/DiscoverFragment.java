@@ -19,7 +19,11 @@ import android.widget.Toast;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.activity.DiscoverItemActivity;
+import com.scy.fastmovie.activity.FastMsgActivity;
+import com.scy.fastmovie.activity.PiaoFangActivity;
 import com.scy.fastmovie.activity.SearchNewsResultActivity;
+import com.scy.fastmovie.activity.TodayTopTenActivity;
 import com.scy.fastmovie.adapter.DiscoverAdapter;
 import com.scy.fastmovie.baseurl.BaseUrl;
 import com.scy.fastmovie.bean.DiscoverBean;
@@ -70,7 +74,7 @@ public class DiscoverFragment extends Fragment implements
         //添加ListView头
         search_list.getRefreshableView().addHeaderView(head);
         search_list.setMode(PullToRefreshBase.Mode.BOTH);
-        search_list.setOnRefreshListener(this);
+        SetListener();
         
         discoverAdapter=new DiscoverAdapter(context);
         search_list.setAdapter(discoverAdapter);
@@ -80,6 +84,17 @@ public class DiscoverFragment extends Fragment implements
         return view;
     }
 
+    /**
+     * 设置监听
+     */
+    private void SetListener(){
+        search_list.setOnRefreshListener(this);
+        search_edit.setOnClickListener(this);
+        btn_top.setOnClickListener(this);
+        btn_piaofang.setOnClickListener(this);
+        btn_kuaixun.setOnClickListener(this);
+        search_list.setOnItemClickListener(this);
+    }
     /**
      * 初始化布局
      */
@@ -138,7 +153,7 @@ public class DiscoverFragment extends Fragment implements
     @Override
     public void onPullDownToRefresh(PullToRefreshBase refreshView) {
         data.clear();
-        initData(pageNo);
+        initData(0);
     }
     //上拉加载
     @Override
@@ -152,21 +167,37 @@ public class DiscoverFragment extends Fragment implements
         switch (v.getId()){
             case R.id.search_edit:
                 startActivity(new Intent(context, SearchNewsResultActivity.class));
+                ((AppCompatActivity)context).overridePendingTransition(0, 0);
                 break;
             case R.id.btn_top:
-                Toast.makeText(context, "top", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(context, TodayTopTenActivity.class));
+                ((AppCompatActivity)context).overridePendingTransition(0, 0);
                 break;
             case R.id.btn_kuaixun:
-                Toast.makeText(context, "kuai", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(context, FastMsgActivity.class));
+                ((AppCompatActivity)context).overridePendingTransition(0, 0);
                 break;
             case R.id.btn_piaofang:
-                Toast.makeText(context, "piao", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(context, PiaoFangActivity.class));
+                ((AppCompatActivity)context).overridePendingTransition(0, 0);
                 break;
         }
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(context, position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show();
+        position=position-2;//有两个头，数据下标从0开始
+        Intent intent=new Intent(context, DiscoverItemActivity.class);
+        intent.putExtra("size",data.get(position).getImages().size());
+        intent.putExtra("targetId",data.get(position).getImages().get(position).getTargetId());
+        try {
+            intent.putExtra("imageCount", data.get(position).getImageCount());
+        }catch (Exception e){
+            
+        }
+        startActivity(intent);
+        ((AppCompatActivity)context).overridePendingTransition(0,0);
+       
     }
 }
