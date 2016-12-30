@@ -18,7 +18,7 @@ public class DiscoverItemActivity extends AppCompatActivity {
     private TextView item_text;
     private WebView item_web;
     private ProgressBar item_progress;
-
+    private int imageCount=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,20 +26,27 @@ public class DiscoverItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_discover_item);
         initViews();
         Intent intent = getIntent();
-        try{
+       
             if (intent!=null){
                 int targetId = intent.getIntExtra("targetId", -1);
                 int size = intent.getIntExtra("size", -1);
-                int imageCount = intent.getIntExtra("imageCount", -1);//imageCount可能没有
+                try{
+                     imageCount = intent.getIntExtra("imageCount", -1);//imageCount可能没有
+                }catch (Exception e){
+                    
+                }
                 if (size==1||size==2){
                     item_text.setText(R.string.zixun);
                     item_web.loadUrl("http://m.maoyan.com/information/"+targetId+"?_v_=yes");
-                }else if (size==3){
+                    return;
+                } if (size==3){
                     item_text.setText(R.string.topic);
                     item_web.loadUrl("http://m.maoyan.com/topic/"+targetId+"?_v_=yes");
-                }else if (size==3&&imageCount>3){
+                    return;
+                } if (size==3&&imageCount>3){
                     item_text.setText(R.string.zixun);
                     item_web.loadUrl("http://m.maoyan.com/information/"+targetId+"?_v_=yes");
+                    return;
                 }
                 item_web.setWebChromeClient(new WebChromeClient(){
                     @Override
@@ -52,9 +59,7 @@ public class DiscoverItemActivity extends AppCompatActivity {
                     }
                 });
             } 
-        }catch (Exception e){
-            
-        }
+      
      
 
         btn_item_cancel.setOnClickListener(new View.OnClickListener() {

@@ -189,15 +189,16 @@ public class DiscoverFragment extends Fragment implements
         //Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show();
         position=position-2;//有两个头，数据下标从0开始
         Intent intent=new Intent(context, DiscoverItemActivity.class);
-        intent.putExtra("size",data.get(position).getImages().size());
-        intent.putExtra("targetId",data.get(position).getImages().get(position).getTargetId());
-        try {
-            intent.putExtra("imageCount", data.get(position).getImageCount());
-        }catch (Exception e){
-            
-        }
+//        intent.putExtra("size",data.get(position).getImages().size());
+//        intent.putExtra("targetId",data.get(position).getImages().get(position).getTargetId());
+//        try {
+//            intent.putExtra("imageCount", data.get(position).getImageCount());
+//        }catch (Exception e){
+//            
+//        }
         startActivity(intent);
-        ((AppCompatActivity)context).overridePendingTransition(0,0);
+        ((AppCompatActivity)context).overridePendingTransition(0,0);  
+            
        
     }
 }
