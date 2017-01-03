@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_to_take_alook_at"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.scy.fastmovie.activity.ToTakeALookAt">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/nv"
+            android:onClick="back" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/back"
+            android:text="我看过的电影"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/share"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/o4" />
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/share"
+            android:background="@null"
+            android:text="编辑"
+            android:textColor="#fff"
+
+            />
+    </RelativeLayout>
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:scrollbars="none"
+        >
+        <RadioGroup
+            android:id="@+id/group1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+
+            >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="@drawable/wanttosee_group_shape"
+                android:button="@null"
+                android:padding="8dp"
+                android:text="全部电影"
+                android:textColor="@drawable/wanttosee_group_selector" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="@drawable/wanttosee_group_shape"
+                android:button="@null"
+                android:padding="8dp"
+                android:text="2016看过的"
+                android:textColor="@drawable/wanttosee_group_selector" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="@drawable/wanttosee_group_shape"
+                android:button="@null"
+                android:text="2015看过的"
+                android:textColor="@drawable/wanttosee_group_selector"
+                android:padding="8dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="@drawable/wanttosee_group_shape"
+                android:button="@null"
+                android:text="2014看过的"
+                android:textColor="@drawable/wanttosee_group_selector"
+                android:padding="8dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="@drawable/wanttosee_group_shape"
+                android:button="@null"
+                android:text="2013看过的"
+                android:textColor="@drawable/wanttosee_group_selector"
+                android:padding="8dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="@drawable/wanttosee_group_shape"
+                android:button="@null"
+                android:text="更早看过的"
+                android:textColor="@drawable/wanttosee_group_selector"
+                android:padding="8dp"/>
+        </RadioGroup>
+
+    </HorizontalScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc" />
+
+
+    <RadioGroup
+        android:id="@+id/group2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/wanttosee_group_shape"
+            android:button="@null"
+            android:padding="8dp"
+            android:text="全部电影"
+            android:textColor="@drawable/wanttosee_group_selector" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/wanttosee_group_shape"
+            android:button="@null"
+            android:padding="8dp"
+            android:text="已购票"
+            android:textColor="@drawable/wanttosee_group_selector" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/wanttosee_group_shape"
+            android:button="@null"
+            android:padding="8dp"
+            android:text="已评分"
+            android:textColor="@drawable/wanttosee_group_selector" />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc" />
+
+    <RadioGroup
+        android:id="@+id/group3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/wanttosee_group_shape"
+            android:button="@null"
+            android:padding="8dp"
+            android:text="最近看过"
+            android:textColor="@drawable/wanttosee_group_selector" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/wanttosee_group_shape"
+            android:button="@null"
+            android:padding="8dp"
+            android:text="评分最高"
+            android:textColor="@drawable/wanttosee_group_selector" />
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc" />
+</LinearLayout>

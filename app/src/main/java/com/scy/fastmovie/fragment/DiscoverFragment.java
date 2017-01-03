@@ -60,27 +60,34 @@ public class DiscoverFragment extends Fragment implements
     public void onAttach(Context context) {
         super.onAttach(context);
         this.context=context;
-        
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_discover, container, false);
+
+        /* head=inflater.inflate(R.layout.discover_item_head,container,false);
+        initViews();
+
         head=inflater.inflate(R.layout.discover_item_head,null);
         initViews();
         //fragment设置toolbar
         ((AppCompatActivity)context).setSupportActionBar(discover_toolbar);
         //添加ListView头
         search_list.getRefreshableView().addHeaderView(head);
+        setListener();
         search_list.setMode(PullToRefreshBase.Mode.BOTH);
+        search_list.setOnRefreshListener(this);
+
+        discoverAdapter=new DiscoverAdapter(mainActivity);
         SetListener();
-        
+
         discoverAdapter=new DiscoverAdapter(context);
         search_list.setAdapter(discoverAdapter);
-        
-        search_list.setRefreshing();
-        
+
+        search_list.setRefreshing();*/
         return view;
     }
 
@@ -123,7 +130,7 @@ public class DiscoverFragment extends Fragment implements
                 .subscribe(new Subscriber<DiscoverBean>() {
                     @Override
                     public void onCompleted() {
-                        
+
                     }
 
                     @Override
@@ -161,7 +168,7 @@ public class DiscoverFragment extends Fragment implements
         pageNo+=10;
         initData(pageNo);
     }
-    
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -194,11 +201,11 @@ public class DiscoverFragment extends Fragment implements
 //        try {
 //            intent.putExtra("imageCount", data.get(position).getImageCount());
 //        }catch (Exception e){
-//            
+//
 //        }
         startActivity(intent);
-        ((AppCompatActivity)context).overridePendingTransition(0,0);  
-            
-       
+        ((AppCompatActivity)context).overridePendingTransition(0,0);
+
+
     }
 }

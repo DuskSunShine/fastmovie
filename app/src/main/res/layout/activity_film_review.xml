@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_film_review2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.scy.fastmovie.activity.FilmReview">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <Button
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/nv"
+            android:onClick="back" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/back"
+            android:text="我的影评"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+    </RelativeLayout>
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@drawable/wanttosee_group_selector"
+            android:button="@null"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/myfilmreview_shape"
+            android:padding="8dp"
+            android:text="短评"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:button="@null"
+            android:textColor="@drawable/wanttosee_group_selector"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:background="@drawable/myfilmreview_shape"
+            android:text="长评"
+            />
+
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ccc"
+        />
+</LinearLayout>
