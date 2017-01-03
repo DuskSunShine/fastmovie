@@ -118,9 +118,8 @@ public class HeadImageActivity extends AppCompatActivity {
                     }
 
                    /*
-                       else {
-                            Toast.makeText(HeadImageActivity.this,"cuocuo、、、",Toast.LENGTH_SHORT).show();
-                        }*/
+                      Toast.makeText(HeadImageActivity.this,"cuocuo、、、",Toast.LENGTH_SHORT).show();
+                        */
 
                 }
             }
@@ -152,6 +151,6 @@ public class HeadImageActivity extends AppCompatActivity {
         intent.putExtra("outputY", 480);
         intent.putExtra("return-data", true);
 
-        startActivityForResult(intent,100);
+        startActivityForResult(intent,201);
     }
 }
