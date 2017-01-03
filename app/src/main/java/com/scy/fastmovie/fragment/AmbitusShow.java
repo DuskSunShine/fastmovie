@@ -15,16 +15,11 @@ import com.scy.fastmovie.R;
 public class AmbitusShow extends Fragment {
 
 
-    public AmbitusShow() {
-        // Required empty public constructor
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ambitus_show, container, false);
+        View view=inflater.inflate(R.layout.fragment_ambitus_show,container,false);
+        return view;
     }
 
 }

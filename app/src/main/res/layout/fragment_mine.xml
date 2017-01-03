@@ -215,7 +215,9 @@
         android:layout_marginTop="10dp"
         />
     <RelativeLayout
+        android:id="@+id/myinfo"
         android:layout_width="match_parent"
+        android:descendantFocusability="blocksDescendants"
         android:layout_height="40dp"
         >
         <TextView
