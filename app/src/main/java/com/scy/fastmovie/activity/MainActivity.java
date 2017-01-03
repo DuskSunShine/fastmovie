@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -17,8 +18,11 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.MapView;
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.fragment.CinemaFragment;
+import com.scy.fastmovie.fragment.DiscoverFragment;
 import com.scy.fastmovie.fragment.MineFragment;
 import com.scy.fastmovie.fragment.MovieFragment;
+import com.scy.fastmovie.interfaces.DataCallBack;
+import com.scy.fastmovie.utils.NetWorkUtils;
 
 public class MainActivity extends AppCompatActivity implements BDLocationListener{
 
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements BDLocationListene
     private MapView baiduMap;
     private LocationClient locationClient;
     double lat,lng;
-    private String cityCode;
+    int flag=0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -59,7 +63,9 @@ public class MainActivity extends AppCompatActivity implements BDLocationListene
         initViews();
         setClickListener();
         initLocation();
-        locationClient.start();
+        if (NetWorkUtils.isConnect(this)){
+            locationClient.start();
+        }
         useViews();
 
     }
@@ -149,8 +155,12 @@ public class MainActivity extends AppCompatActivity implements BDLocationListene
             double lng=bdLocation.getLongitude();
             this.lat=lat;
             this.lng=lng;
-            bdLocation.getCity();
-            cityCode = bdLocation.getCityCode();
+            String city = bdLocation.getCity();
+            flag++;
+            if (flag==1){
+                Toast.makeText(MainActivity.this, "定位成功。。。", Toast.LENGTH_SHORT).show();
+                ((DataCallBack)(new MovieFragment())).getDataCallBack(city);
+            }
 //            cityCode=bdLocation.getBuildingID();
 //            Toast.makeText(MainActivity.this,cityCode,Toast.LENGTH_LONG).show();
         }

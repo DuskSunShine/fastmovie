@@ -7,5 +7,5 @@ package com.scy.fastmovie.baseurl;
 public class BaseUrl {
     //发现http://api.maoyan.com/sns/v5/feed.json
     public static final String DISCOVERBASEURL="http://api.maoyan.com/"; 
-    
+    public static final String MEITUAN="http://advert.mobile.meituan.com/";
 }
