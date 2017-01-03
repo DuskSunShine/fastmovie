@@ -62,7 +62,8 @@
         <activity android:name=".activity.FilmReview" />
         <activity android:name=".activity.SubjiectOfTalkActivity" />
         <activity android:name=".activity.OrderForGoodsActivity" />
-        <activity android:name=".activity.MyInfoActivity"></activity>
+        <activity android:name=".activity.MyInfoActivity" />
+        <activity android:name=".activity.HeadImageActivity"></activity>
     </application>
 
 </manifest>

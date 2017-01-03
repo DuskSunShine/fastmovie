@@ -36,13 +36,13 @@
         android:id="@+id/systeminfo"
         android:layout_width="match_parent"
         android:descendantFocusability="blocksDescendants"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="系统通知"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
             android:textColor="#030303"
@@ -65,13 +65,13 @@
         android:id="@+id/good"
         android:layout_width="match_parent"
         android:descendantFocusability="blocksDescendants"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="赞"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
             android:textColor="#030303"
@@ -94,13 +94,13 @@
         android:id="@+id/pinglun"
         android:layout_width="match_parent"
         android:descendantFocusability="blocksDescendants"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="评论"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:layout_marginLeft="10dp"
             android:layout_centerVertical="true"
             android:textColor="#030303"

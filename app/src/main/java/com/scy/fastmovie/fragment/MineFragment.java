@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.makeramen.roundedimageview.RoundedImageView;
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.activity.FilmReview;
 import com.scy.fastmovie.activity.LoginActivity;
@@ -29,6 +30,7 @@ public class MineFragment extends Fragment {
     private TextView loginnow;
     private Button wanttosee, totakelookat, filmreview, subjectoftalk;
     private RelativeLayout myorder, myinfo;
+    private RoundedImageView userhead;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,7 +43,7 @@ public class MineFragment extends Fragment {
         subjectoftalk = (Button) view.findViewById(R.id.huati);
         myorder = (RelativeLayout) view.findViewById(R.id.myorder);
         myinfo = (RelativeLayout) view.findViewById(R.id.myinfo);
-
+        userhead = (RoundedImageView) view.findViewById(R.id.userhead);
         setonclicklistener();
 
         return view;
@@ -93,7 +95,14 @@ public class MineFragment extends Fragment {
         myinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(), MyInfoActivity.class);
+                Intent intent = new Intent(getContext(), MyInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+        userhead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MyInfoActivity.class);
                 startActivity(intent);
             }
         });
