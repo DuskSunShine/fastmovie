@@ -45,7 +45,6 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
     private HotAdapter hotAdapter;
 //    private int total=12;
     int num=0;
-    static int flag=0;
     private List<HotFragmentBean.DataBean.HotBean>data=new ArrayList<>();
     private List<HotFragmentBean.DataBean.HotBean>datas=new ArrayList<>();
 //    private ListView listViews;
@@ -109,7 +108,7 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
     }*/
 
     private void DoSomething() {
-        flag++;
+
         listView.setMode(PullToRefreshBase.Mode.BOTH);
         listView.setOnRefreshListener(this);
 
@@ -130,9 +129,7 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
 //        viewPager.startAutoScroll();
         hotAdapter = new HotAdapter(context);
         listView.setAdapter(hotAdapter);
-        if (!this.isDetached()&&flag==1){
-            listView.setRefreshing();
-        }
+        listView.setRefreshing();
 
     }
 

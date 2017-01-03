@@ -3,6 +3,7 @@ package com.scy.fastmovie.httpapiservice;
 import com.scy.fastmovie.bean.BannerBean;
 import com.scy.fastmovie.bean.DiscoverBean;
 import com.scy.fastmovie.bean.HotFragmentBean;
+import com.scy.fastmovie.bean.WaitFragmentBean;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -40,6 +41,16 @@ public interface HttpApiService {
             @Query("refer")String refer,@Query("uid")String uid,@Query("utm_campaign")String utm_campaign,
             @Query("utm_content")String utm_content,@Query("utm_medium")String utm_medium,@Query("utm_source")String utm_source,
             @Query("utm_term")String utm_term,@Query("uuid")String uuid,@Query("version")String version
+    );
+
+    @GET("mmdb/movie/v2/list/rt/order/coming.json?")
+    Observable<WaitFragmentBean>getWaitData(
+            @Query("ci")String ci,@Query("limit")String limit,@Query("token")String token,@Query("utm_campaign")String utm_campaign,
+            @Query("movieBundleVersion")String movieBundleVersion,@Query("utm_source")String utm_source,@Query("utm_medium")String utm_medium,
+            @Query("utm_term")String utm_term,@Query("utm_content")String utm_content,@Query("net")String net,@Query("dModel")String dModel,
+            @Query("uuid")String uuid,@Query("lat")String lat,@Query("lng")String lng,@Query("__reqTraceID")String __reqTraceID,
+            @Query("refer")String refer,@Query("__skck")String __skck,@Query("__skts")String __skts,@Query("__skua")String __skua,
+            @Query("__skno")String __skno,@Query("__skcy")String __skcy
     );
     
 }
