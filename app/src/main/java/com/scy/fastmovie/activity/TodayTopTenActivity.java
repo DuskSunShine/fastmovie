@@ -40,6 +40,7 @@ public class TodayTopTenActivity extends AppCompatActivity {
                 }
             }
         });
+        top_webView.setWebViewClient(new WebViewClient());
         btn_top_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

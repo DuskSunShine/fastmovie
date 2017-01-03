@@ -37,6 +37,7 @@ public class FastMsgActivity extends AppCompatActivity {
                 }
             }
         });
+        fast_webView.setWebViewClient(new WebViewClient());
         btn_fast_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

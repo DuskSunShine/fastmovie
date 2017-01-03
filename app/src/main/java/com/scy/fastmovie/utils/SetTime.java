@@ -37,7 +37,7 @@ public class SetTime {
         } else if (time >= 3600 * 48 && time < 3600 * 72) {
             textView.setText("前天");
         } else if (time >= 3600 * 72) {
-            String time1 = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss")
+            String time1 = new SimpleDateFormat("yyyy年MM月dd日")//HH:mm:ss
                     .format(new Date(past));
             textView.setText(time1);
         }

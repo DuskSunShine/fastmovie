@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -49,7 +49,8 @@ public class DiscoverFragment extends Fragment implements
     private Toolbar discover_toolbar;
     private View view;
     private View head;
-    private Button search_edit,btn_top,btn_kuaixun,btn_piaofang;
+    private Button btn_top,btn_kuaixun,btn_piaofang;
+    private EditText search_edit;
     private PullToRefreshListView search_list;
     private DiscoverAdapter discoverAdapter;
     private int pageNo=0;
@@ -60,7 +61,6 @@ public class DiscoverFragment extends Fragment implements
     public void onAttach(Context context) {
         super.onAttach(context);
         this.context=context;
-        
     }
 
     @Override
@@ -100,7 +100,7 @@ public class DiscoverFragment extends Fragment implements
      */
     private void initViews(){
         discover_toolbar= (Toolbar) view.findViewById(R.id.discover_toolbar);
-        search_edit= (Button) view.findViewById(R.id.search_edit);
+        search_edit= (EditText) view.findViewById(R.id.search_edit);
         search_list= (PullToRefreshListView) view.findViewById(R.id.search_list);
         btn_top= (Button) head.findViewById(R.id.btn_top);
         btn_kuaixun= (Button) head.findViewById(R.id.btn_kuaixun);
@@ -187,17 +187,20 @@ public class DiscoverFragment extends Fragment implements
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //Toast.makeText(context, ""+position, Toast.LENGTH_SHORT).show();
-        position=position-2;//有两个头，数据下标从0开始
+        Log.i("====","position"+position);
+        //position=position-2;//有两个头，数据下标从0开始
         Intent intent=new Intent(context, DiscoverItemActivity.class);
-//        intent.putExtra("size",data.get(position).getImages().size());
-//        intent.putExtra("targetId",data.get(position).getImages().get(position).getTargetId());
-//        try {
-//            intent.putExtra("imageCount", data.get(position).getImageCount());
-//        }catch (Exception e){
-//            
-//        }
-        startActivity(intent);
-        ((AppCompatActivity)context).overridePendingTransition(0,0);  
+        try {
+            intent.putExtra("imageCount", data.get(position-2).getImageCount());
+        }catch (Exception e){
+            
+        }finally {
+            intent.putExtra("size",data.get(position-2).getImages().size());
+            intent.putExtra("targetId",data.get(position-2).getImages().get(0).getTargetId());
+            startActivity(intent);
+            ((AppCompatActivity)context).overridePendingTransition(0,0);
+        }
+       
             
        
     }

@@ -2,6 +2,7 @@ package com.scy.fastmovie.httpapiservice;
 
 import com.scy.fastmovie.bean.DiscoverBean;
 import com.scy.fastmovie.bean.HotFragmentBean;
+import com.scy.fastmovie.bean.SearchResultBean;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -27,6 +28,20 @@ public interface HttpApiService {
             @Query("net")String net,@Query("refer")String refer,@Query("token")String token,@Query("utm_campaign")String utm_campaign,
             @Query("utm_content")String utm_content,@Query("utm_medium")String utm_medium,@Query("utm_source")String utm_source,
             @Query("utm_term")String utm_term,@Query("uuid")String uuid
+    );
+    //查找资讯
+    //查找资讯 http://api.maoyan.com/mmdb/search/integrated/keyword/list.json?
+    // almtype=1&keyword=水&stype=4&refer=0&iscorrected=true&limit=10&offset=0&ci=59
+    @GET("mmdb/search/integrated/keyword/list.json?")
+    Observable<SearchResultBean>getSearchResultData(
+            @Query("almtype") String almtype,
+            @Query("keyword") String keyword,
+            @Query("stype") String stype,
+            @Query("refer") String refer,
+            @Query("iscorrected") String iscorrected,
+            @Query("limit") String limit,
+            @Query("offset") String offset,
+            @Query("ci") String ci
     );
     
 }

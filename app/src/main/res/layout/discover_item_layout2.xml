@@ -6,7 +6,6 @@
     android:layout_height="220dp"
     app:cardElevation="5dp"
     app:cardPreventCornerOverlap="true"
-    android:orientation="vertical"
     >
 
     <LinearLayout
@@ -84,7 +83,6 @@
                 android:layout_height="wrap_content" 
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="10dp"
-                android:text="111"
                 android:layout_toLeftOf="@+id/discover_img1"/>
             <ImageView
                 android:layout_toLeftOf="@+id/discover_text5"
@@ -96,7 +94,6 @@
                 android:src="@mipmap/zx"
                 android:scaleType="centerCrop"/>
             <TextView
-                android:text="222"
                 android:id="@+id/discover_text5"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="5dp"
