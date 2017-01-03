@@ -29,7 +29,7 @@ public class HotAdapter extends BaseAdapter {
         this.context = context;
     }
 
-    public void setData(List data) {
+    public void setData(List<HotFragmentBean.DataBean.HotBean> data) {
         this.data = data;
         notifyDataSetChanged();
     }
@@ -79,38 +79,40 @@ public class HotAdapter extends BaseAdapter {
         }else {
             viewHolder= ((ViewHolder) convertView.getTag());
         }
-        viewHolder.tv_detail.setText(data.get(position).getScm());
-        viewHolder.tv_session.setText(data.get(position).getShowInfo());
-        viewHolder.tv_film.setText(data.get(position).getNm());
+        if(data!=null){
+            viewHolder.tv_detail.setText(data.get(position).getScm());
+            viewHolder.tv_session.setText(data.get(position).getShowInfo());
+            viewHolder.tv_film.setText(data.get(position).getNm());
 
-        Timestamp timestamp=Timestamp.valueOf(data.get(position).getRt()+" 00:00:00");
-        long time=timestamp.getTime();
-        Date date=new Date();
-        long curTime=date.getTime();
-        if (data.get(position).getSc()!=0){
-            if (curTime-time>0){
-                viewHolder.tv_audience.setText("观众");
-                viewHolder.buy_ticket.setText("购票");
-            }else {
-                viewHolder.tv_audience.setText("点映");
-                viewHolder.buy_ticket.setText("预售");
+            Timestamp timestamp=Timestamp.valueOf(data.get(position).getRt()+" 00:00:00");
+            long time=timestamp.getTime();
+            Date date=new Date();
+            long curTime=date.getTime();
+            if (data.get(position).getSc()!=0){
+                if (curTime-time>0){
+                    viewHolder.tv_audience.setText("观众");
+                    viewHolder.buy_ticket.setText("购票");
+                }else {
+                    viewHolder.tv_audience.setText("点映");
+                    viewHolder.buy_ticket.setText("预售");
+                }
             }
-        }
-        Glide.with(context).load(data.get(position).getImg())
-                .placeholder(R.mipmap.ic_launcher)
-                .into(viewHolder.img);
-        if (data.get(position).getSc()==0){
-            viewHolder.tv_audience.setText("暂无评分");
-            viewHolder.tv_grade.setVisibility(View.INVISIBLE);
-        }else {
-            viewHolder.tv_grade.setVisibility(View.VISIBLE);
-            viewHolder.tv_grade.setText(data.get(position).getSc()+"");
-        }
-        if (data.get(position).getShowst()==4&&data.get(position).getSc()==0){
-            viewHolder.tv_audience.setText(data.get(position).getWish()+" 人想看");
-            viewHolder.tv_grade.setVisibility(View.INVISIBLE);
-        }else {
-            viewHolder.tv_grade.setVisibility(View.VISIBLE);
+            Glide.with(context).load(data.get(position).getImg())
+                    .placeholder(R.mipmap.ic_launcher)
+                    .into(viewHolder.img);
+            if (data.get(position).getSc()==0){
+                viewHolder.tv_audience.setText("暂无评分");
+                viewHolder.tv_grade.setVisibility(View.INVISIBLE);
+            }else {
+                viewHolder.tv_grade.setVisibility(View.VISIBLE);
+                viewHolder.tv_grade.setText(data.get(position).getSc()+"");
+            }
+            if (data.get(position).getShowst()==4&&data.get(position).getSc()==0){
+                viewHolder.tv_audience.setText(data.get(position).getWish()+" 人想看");
+                viewHolder.tv_grade.setVisibility(View.INVISIBLE);
+            }else {
+                viewHolder.tv_grade.setVisibility(View.VISIBLE);
+            }
         }
         return convertView;
     }

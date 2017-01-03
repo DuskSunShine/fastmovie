@@ -1,6 +1,7 @@
 package com.scy.fastmovie.fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -42,21 +43,26 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
     private View view;
     private PullToRefreshListView listView;
     private HotAdapter hotAdapter;
-    private int total=12;
+//    private int total=12;
     int num=0;
-    int flag=0;
+    static int flag=0;
     private List<HotFragmentBean.DataBean.HotBean>data=new ArrayList<>();
     private List<HotFragmentBean.DataBean.HotBean>datas=new ArrayList<>();
-    private ListView listViews;
-    private BannerAdapter bannerAdapter;
-    AutoScrollViewPager viewPager;
-    List<BannerBean.DataBean>imgUrlLists=new ArrayList<>();
+//    private ListView listViews;
+//    private BannerAdapter bannerAdapter;
+//    AutoScrollViewPager viewPager;
+    Context context;
+//    List<BannerBean.DataBean>imgUrlLists=new ArrayList<>();
 
     public HotFragment() {
         // Required empty public constructor
     }
 
-
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context=context;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -69,7 +75,7 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
         return view;
     }
 
-    private void loadBannerData() {
+    /*private void loadBannerData() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl.MEITUAN)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -100,7 +106,7 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
                         initDatas();
                     }
                 });
-    }
+    }*/
 
     private void DoSomething() {
         flag++;
@@ -122,7 +128,7 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
 //        viewPager.setAdapter(bannerAdapter);
 //        listViews.addHeaderView(viewPager);
 //        viewPager.startAutoScroll();
-//        hotAdapter = new HotAdapter(getContext());
+        hotAdapter = new HotAdapter(context);
         listView.setAdapter(hotAdapter);
         if (!this.isDetached()&&flag==1){
             listView.setRefreshing();
@@ -132,13 +138,13 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
 
     private void initViews() {
         listView = (PullToRefreshListView) view.findViewById(R.id.list);
-        listViews = listView.getRefreshableView();
+//        listViews = listView.getRefreshableView();
     }
 
     @Override
     public void onPullDownToRefresh(PullToRefreshBase refreshView) {
         //下拉刷新
-        if(NetWorkUtils.isConnect(getContext())){
+        if(NetWorkUtils.isConnect(context)){
             num=0;
             data.clear();
             datas.clear();
@@ -238,12 +244,12 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
     @Override
     public void onPause() {
         super.onPause();
-        viewPager.stopAutoScroll();
+//        viewPager.stopAutoScroll();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        viewPager.stopAutoScroll();
+//        viewPager.stopAutoScroll();
     }
 }
