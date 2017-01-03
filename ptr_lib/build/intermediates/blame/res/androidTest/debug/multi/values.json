@@ -159,8 +159,8 @@
                     "startLine": 11,
                     "startColumn": 4,
                     "startOffset": 1921,
-                    "endColumn": 101,
-                    "endOffset": 2018
+                    "endColumn": 74,
+                    "endOffset": 1991
                 },
                 "from": {
                     "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
@@ -168,8 +168,8 @@
                         "startLine": 11,
                         "startColumn": 4,
                         "startOffset": 1921,
-                        "endColumn": 101,
-                        "endOffset": 2018
+                        "endColumn": 74,
+                        "endOffset": 1991
                     }
                 }
             },
@@ -177,18 +177,18 @@
                 "to": {
                     "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 2023,
-                    "endColumn": 113,
-                    "endOffset": 2132
+                    "startOffset": 1996,
+                    "endColumn": 79,
+                    "endOffset": 2071
                 },
                 "from": {
                     "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 2023,
-                        "endColumn": 113,
-                        "endOffset": 2132
+                        "startOffset": 1996,
+                        "endColumn": 79,
+                        "endOffset": 2071
                     }
                 }
             },
@@ -196,18 +196,18 @@
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 2137,
-                    "endColumn": 107,
-                    "endOffset": 2240
+                    "startOffset": 2076,
+                    "endColumn": 78,
+                    "endOffset": 2150
                 },
                 "from": {
                     "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 2137,
-                        "endColumn": 107,
-                        "endOffset": 2240
+                        "startOffset": 2076,
+                        "endColumn": 78,
+                        "endOffset": 2150
                     }
                 }
             },
@@ -215,18 +215,18 @@
                 "to": {
                     "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 2245,
-                    "endColumn": 63,
-                    "endOffset": 2304
+                    "startOffset": 2155,
+                    "endColumn": 62,
+                    "endOffset": 2213
                 },
                 "from": {
                     "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 2245,
-                        "endColumn": 63,
-                        "endOffset": 2304
+                        "startOffset": 2155,
+                        "endColumn": 62,
+                        "endOffset": 2213
                     }
                 }
             },
@@ -234,18 +234,18 @@
                 "to": {
                     "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 2309,
-                    "endColumn": 65,
-                    "endOffset": 2370
+                    "startOffset": 2218,
+                    "endColumn": 67,
+                    "endOffset": 2281
                 },
                 "from": {
                     "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 2309,
-                        "endColumn": 65,
-                        "endOffset": 2370
+                        "startOffset": 2218,
+                        "endColumn": 67,
+                        "endOffset": 2281
                     }
                 }
             },
@@ -253,18 +253,18 @@
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 2375,
-                    "endColumn": 67,
-                    "endOffset": 2438
+                    "startOffset": 2286,
+                    "endColumn": 66,
+                    "endOffset": 2348
                 },
                 "from": {
                     "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 2375,
-                        "endColumn": 67,
-                        "endOffset": 2438
+                        "startOffset": 2286,
+                        "endColumn": 66,
+                        "endOffset": 2348
                     }
                 }
             }
