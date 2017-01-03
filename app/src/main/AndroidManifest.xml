@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.scy.fastmovie">
-
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
@@ -39,7 +39,7 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="luuHMb7AYWQN999Si2TsQ6dYAnuyADXC" />
+            android:value="4PkFIi2Gl6llrTbfOnqZTFXpgBioGGoZ" />
 
         <activity android:name=".activity.MainActivity">
             <intent-filter>
@@ -55,9 +55,20 @@
             android:process=":remote" />
 
         <activity android:name=".activity.SearchNewsResultActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegstActivity" />
+        <activity android:name=".activity.WantToSeeActivity" />
+        <activity android:name=".activity.ToTakeALookAt" />
+        <activity android:name=".activity.FilmReview" />
+        <activity android:name=".activity.SubjiectOfTalkActivity" />
+        <activity android:name=".activity.OrderForGoodsActivity" />
+        <activity android:name=".activity.MyInfoActivity" />
+        <activity android:name=".activity.HeadImageActivity"></activity>
+        <activity android:name=".activity.SearchNewsResultActivity" />
         <activity android:name=".activity.TodayTopTenActivity" />
         <activity android:name=".activity.FastMsgActivity" />
         <activity android:name=".activity.PiaoFangActivity" />
+        <activity android:name=".activity.PiaoFangActivity"/>
         <activity android:name=".activity.DiscoverItemActivity"></activity>
     </application>
 
