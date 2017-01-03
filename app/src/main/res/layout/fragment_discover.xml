@@ -21,22 +21,19 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:hint="@string/search_news"
-                android:singleLine="true"
                 android:textColor="@color/hui"
                 android:drawableLeft="@mipmap/a1v"
-                android:background="@drawable/search_shape" />
+                android:background="@drawable/search_shape"
+                />
         </android.support.v7.widget.Toolbar>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    
         <com.handmark.pulltorefresh.library.PullToRefreshListView
             android:id="@+id/search_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:ptrHeaderTextColor="#238ac6"
-            >
+            app:ptrHeaderTextColor="#238ac6">
         </com.handmark.pulltorefresh.library.PullToRefreshListView>
-    </LinearLayout>
+    
 
 </LinearLayout>

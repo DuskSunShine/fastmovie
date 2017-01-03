@@ -6,19 +6,25 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.mapapi.map.MapView;
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.fragment.CinemaFragment;
 import com.scy.fastmovie.fragment.DiscoverFragment;
 import com.scy.fastmovie.fragment.MineFragment;
 import com.scy.fastmovie.fragment.MovieFragment;
+import com.scy.fastmovie.interfaces.DataCallBack;
+import com.scy.fastmovie.utils.NetWorkUtils;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BDLocationListener{
 
     private RadioGroup rgb_bottom;
     private RadioButton rb1;
@@ -27,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     private CinemaFragment fragment_cinema;
     private DiscoverFragment fragment_discover;
     private MineFragment fragment_mine;
+    private MapView baiduMap;
+    private LocationClient locationClient;
+    double lat,lng;
+    int flag=0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
         initViews();
         setClickListener();
+        initLocation();
+        if (NetWorkUtils.isConnect(this)){
+            locationClient.start();
+        }
         useViews();
 
     }
@@ -102,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        locationClient.registerLocationListener(this);
     }
 
     private void useViews() {
@@ -111,5 +126,60 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         rgb_bottom = (RadioGroup) findViewById(R.id.rgb_bottom);
         rb1 = (RadioButton) findViewById(R.id.rb_1);
+        baiduMap = ((MapView)findViewById(R.id.baiduMap));
+        locationClient = new LocationClient(getApplicationContext());
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        baiduMap.onDestroy();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        baiduMap.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        baiduMap.onPause();
+    }
+
+    @Override
+    public void onReceiveLocation(BDLocation bdLocation) {
+        if (bdLocation.getLocType()==61||bdLocation.getLocType()==161){
+            double lat=bdLocation.getLatitude();
+            double lng=bdLocation.getLongitude();
+            this.lat=lat;
+            this.lng=lng;
+            String city = bdLocation.getCity();
+            flag++;
+            if (flag==1){
+                Toast.makeText(MainActivity.this, "定位成功。。。", Toast.LENGTH_SHORT).show();
+                ((DataCallBack)(new MovieFragment())).getDataCallBack(city);
+            }
+//            cityCode=bdLocation.getBuildingID();
+//            Toast.makeText(MainActivity.this,cityCode,Toast.LENGTH_LONG).show();
+        }
+    }
+    private void initLocation(){
+        LocationClientOption option = new LocationClientOption();
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy
+        );//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
+        option.setCoorType("bd09ll");//可选，默认gcj02，设置返回的定位结果坐标系
+        int span=5000;
+        option.setScanSpan(span);//可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
+        option.setIsNeedAddress(true);//可选，设置是否需要地址信息，默认不需要
+        option.setOpenGps(true);//可选，默认false,设置是否使用gps
+        option.setLocationNotify(true);//可选，默认false，设置是否当GPS有效时按照1S/1次频率输出GPS结果
+        option.setIsNeedLocationDescribe(true);//可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
+        option.setIsNeedLocationPoiList(true);//可选，默认false，设置是否需要POI结果，可以在BDLocation.getPoiList里得到
+        option.setIgnoreKillProcess(false);//可选，默认true，定位SDK内部是一个SERVICE，并放到了独立进程，设置是否在stop的时候杀死这个进程，默认不杀死
+        option.SetIgnoreCacheException(false);//可选，默认false，设置是否收集CRASH信息，默认收集
+        option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤GPS仿真结果，默认需要
+        locationClient.setLocOption(option);
     }
 }

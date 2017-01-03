@@ -6,4 +6,6 @@
     <color name="white">#fff</color>
     <color name="hui">#e6e6ec</color>
     <color name="black">#000</color>
+    <color name="yellow">#f9de16</color>
+    <color name="gray">#ccc</color>
 </resources>
