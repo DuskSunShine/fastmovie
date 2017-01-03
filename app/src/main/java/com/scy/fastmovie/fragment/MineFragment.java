@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.activity.FilmReview;
+import com.scy.fastmovie.activity.HeadImageActivity;
 import com.scy.fastmovie.activity.LoginActivity;
 import com.scy.fastmovie.activity.MyInfoActivity;
 import com.scy.fastmovie.activity.OrderForGoodsActivity;
@@ -102,7 +103,7 @@ public class MineFragment extends Fragment {
         userhead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MyInfoActivity.class);
+                Intent intent = new Intent(getContext(), HeadImageActivity.class);
                 startActivity(intent);
             }
         });
