@@ -21,4 +21,6 @@
     <string name="choose">请选择</string>
     <string name="zixun">资讯</string>
     <string name="topic">话题</string>
+    <string name="xiepin">写评论...</string>
+    <string name="fabiao">发表</string>
 </resources>

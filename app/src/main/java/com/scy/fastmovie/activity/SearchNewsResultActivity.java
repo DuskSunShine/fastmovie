@@ -98,8 +98,8 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
             public void afterTextChanged(Editable s) {
                 Log.i("==afterTextChanged===",s.toString());
                 if (s.toString()!=null){
-                    search_result_list.setRefreshing();
                     data.clear();
+                    search_result_list.setRefreshing();
                     initData(s.toString(),0);
                 }
                 
@@ -160,6 +160,7 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
         Intent intent=new Intent(this,DiscoverItemActivity.class);
             intent.putExtra("source",data.get(position-1).getSource());
             intent.putExtra("id",data.get(position-1).getId());
+            intent.putExtra("title1",data.get(position-1).getTitle());
             startActivity(intent);
             overridePendingTransition(0,0);
         

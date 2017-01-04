@@ -69,7 +69,7 @@ public class DiscoverFragment extends Fragment implements
                              Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_discover, container, false);
 
-        /* head=inflater.inflate(R.layout.discover_item_head,container,false);
+         head=inflater.inflate(R.layout.discover_item_head,null);
         initViews();
 
         head=inflater.inflate(R.layout.discover_item_head,null);
@@ -78,17 +78,17 @@ public class DiscoverFragment extends Fragment implements
         ((AppCompatActivity)context).setSupportActionBar(discover_toolbar);
         //添加ListView头
         search_list.getRefreshableView().addHeaderView(head);
-        setListener();
+        SetListener();
         search_list.setMode(PullToRefreshBase.Mode.BOTH);
         search_list.setOnRefreshListener(this);
 
-        discoverAdapter=new DiscoverAdapter(mainActivity);
+        discoverAdapter=new DiscoverAdapter(context);
         SetListener();
 
         discoverAdapter=new DiscoverAdapter(context);
         search_list.setAdapter(discoverAdapter);
 
-        search_list.setRefreshing();*/
+        search_list.setRefreshing();
         return view;
     }
 
@@ -205,22 +205,10 @@ public class DiscoverFragment extends Fragment implements
         }finally {
             intent.putExtra("size",data.get(position-2).getImages().size());
             intent.putExtra("targetId",data.get(position-2).getImages().get(0).getTargetId());
+            intent.putExtra("title",data.get(position-2).getTitle());
+            intent.putExtra("images",data.get(position-2).getImages().get(0).getUrl());
             startActivity(intent);
             ((AppCompatActivity)context).overridePendingTransition(0,0);
         }
-       
-            
-       
-//        intent.putExtra("size",data.get(position).getImages().size());
-//        intent.putExtra("targetId",data.get(position).getImages().get(position).getTargetId());
-//        try {
-//            intent.putExtra("imageCount", data.get(position).getImageCount());
-//        }catch (Exception e){
-//
-//        }
-        startActivity(intent);
-        ((AppCompatActivity)context).overridePendingTransition(0,0);
-
-
     }
 }

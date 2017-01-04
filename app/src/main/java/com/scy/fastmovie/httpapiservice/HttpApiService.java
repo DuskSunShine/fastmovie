@@ -7,6 +7,7 @@ import com.scy.fastmovie.bean.SearchResultBean;
 import com.scy.fastmovie.bean.WaitFragmentBean;
 
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -67,5 +68,7 @@ public interface HttpApiService {
             @Query("refer")String refer,@Query("__skck")String __skck,@Query("__skts")String __skts,@Query("__skua")String __skua,
             @Query("__skno")String __skno,@Query("__skcy")String __skcy
     );
-    
+    //资讯评论
+    // http://api.maoyan.com/sns/news/comment.json?
+    //ci=59&newsId=17947&text=heheh
 }
