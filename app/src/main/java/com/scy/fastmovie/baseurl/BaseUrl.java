@@ -15,4 +15,6 @@ public class BaseUrl {
     public static final String FASTMSG="http://m.maoyan.com/information?_v_=yes";
     //票房  http://m.maoyan.com/newGuide/maoyanpiaofang
     public static final String PIAO="http://m.maoyan.com/newGuide/maoyanpiaofang";
+    //热映http://api.maoyan.com/mmdb/movie/v3/list/
+    public static final String HOT="http://api.maoyan.com/mmdb/movie/v3/list/hot.json?";
 }
