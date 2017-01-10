@@ -1,6 +1,7 @@
 package com.scy.fastmovie.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.bean.SearchResultBean;
+import com.scy.fastmovie.customviews.MyTextView;
 
 import java.util.List;
 
@@ -20,7 +22,12 @@ public class SearchResultAdapter extends BaseAdapter{
     private Context context;
     private LayoutInflater inflater;
     private List<SearchResultBean.DataBean.ListBean> data;
-    
+    private String keyword;
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
     public SearchResultAdapter(Context context) {
         this.context = context;
         inflater=LayoutInflater.from(context);
@@ -45,8 +52,9 @@ public class SearchResultAdapter extends BaseAdapter{
         return position;
     }
     static class ViewHolder{
-        TextView search_result_title,search_result_nick
+        TextView search_result_nick
         ,search_result_look,search_result_comment;
+        MyTextView search_result_title;
     }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -57,12 +65,15 @@ public class SearchResultAdapter extends BaseAdapter{
             viewHolder.search_result_comment= (TextView) convertView.findViewById(R.id.search_result_comment);
             viewHolder.search_result_look= (TextView) convertView.findViewById(R.id.search_result_look);
             viewHolder.search_result_nick= (TextView) convertView.findViewById(R.id.search_result_nick);
-            viewHolder.search_result_title= (TextView) convertView.findViewById(R.id.search_result_title);
+            viewHolder.search_result_title= (MyTextView) convertView.findViewById(R.id.search_result_title);
             convertView.setTag(viewHolder);
         }else{
             viewHolder= (ViewHolder) convertView.getTag();
         }
-        viewHolder.search_result_title.setText(data.get(position).getTitle());
+        if (data.get(position).getTitle().contains(keyword)){
+            viewHolder.search_result_title.setSpecifiedTextsColor(data.get(position).getTitle()
+                    ,keyword,Color.RED);
+        }
         if (data.get(position).getSource()!=""){
             viewHolder.search_result_nick.setText(data.get(position).getSource());
         }else{

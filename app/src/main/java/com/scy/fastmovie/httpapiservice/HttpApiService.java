@@ -3,6 +3,7 @@ package com.scy.fastmovie.httpapiservice;
 import com.scy.fastmovie.bean.BannerBean;
 import com.scy.fastmovie.bean.DiscoverBean;
 import com.scy.fastmovie.bean.HotFragmentBean;
+import com.scy.fastmovie.bean.SearchCinemaBean;
 import com.scy.fastmovie.bean.SearchResultBean;
 import com.scy.fastmovie.bean.WaitFragmentBean;
 
@@ -42,6 +43,19 @@ public interface HttpApiService {
             @Query("stype") String stype,
             @Query("refer") String refer,
             @Query("iscorrected") String iscorrected,
+            @Query("limit") String limit,
+            @Query("offset") String offset,
+            @Query("ci") String ci
+    );
+    //查找影院
+    //http://api.maoyan.com/mmdb/search/cinema/keyword/list.json?
+    // ctid=59&keyword=%E4%B8%87%E8%BE%BE&refer=1&referpage=0&limit=10&offset=0
+    @GET("mmdb/search/cinema/keyword/list.json?")
+    Observable<SearchCinemaBean> getSearchCinemaData(
+            @Query("ctid") String ctid,
+            @Query("keyword") String keyword,
+            @Query("refer") String refer,
+            @Query("referpage") String referpage,
             @Query("limit") String limit,
             @Query("offset") String offset,
             @Query("ci") String ci

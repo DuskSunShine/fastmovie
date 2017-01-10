@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -16,6 +17,16 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.core.PoiInfo;
+import com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener;
+import com.baidu.mapapi.search.poi.PoiAddrInfo;
+import com.baidu.mapapi.search.poi.PoiCitySearchOption;
+import com.baidu.mapapi.search.poi.PoiDetailResult;
+import com.baidu.mapapi.search.poi.PoiIndoorResult;
+import com.baidu.mapapi.search.poi.PoiNearbySearchOption;
+import com.baidu.mapapi.search.poi.PoiResult;
+import com.baidu.mapapi.search.poi.PoiSearch;
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.fragment.CinemaFragment;
 import com.scy.fastmovie.fragment.DiscoverFragment;
@@ -24,7 +35,10 @@ import com.scy.fastmovie.fragment.MovieFragment;
 import com.scy.fastmovie.interfaces.DataCallBack;
 import com.scy.fastmovie.utils.NetWorkUtils;
 
-public class MainActivity extends AppCompatActivity implements BDLocationListener{
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements 
+        BDLocationListener{
 
     private RadioGroup rgb_bottom;
     private RadioButton rb1;
@@ -37,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements BDLocationListene
     private LocationClient locationClient;
     double lat,lng;
     int flag=0;
-
+    private PoiSearch poiSearch;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,11 +81,54 @@ public class MainActivity extends AppCompatActivity implements BDLocationListene
             locationClient.start();
         }
         useViews();
+        poiSearch=PoiSearch.newInstance();
+        OnGetPoiSearchResultListener poiSearchResultListener=new OnGetPoiSearchResultListener() {
+            @Override
+            public void onGetPoiResult(PoiResult poiResult) {
+                if (poiResult!=null) {
+                    List<PoiInfo> allPoi = poiResult.getAllPoi();
+                    if (poiResult.isHasAddrInfo()) {
+                        List<PoiAddrInfo> allAddr = poiResult.getAllAddr();
+                        Log.e("===onGetPoiResult===", "***" +allAddr );
+                    }
+                    int totalPageNum = poiResult.getTotalPageNum();
+                    
+                    Log.e("===onGetPoiResult===", "***" + allPoi);
+                    
+                    Log.e("===onGetPoiResult===", "***" + totalPageNum);
+                }
+            }
 
+            @Override
+            public void onGetPoiDetailResult(PoiDetailResult poiDetailResult) {
+                if (poiDetailResult!=null) {
+                    String address = poiDetailResult.getAddress();
+                    int i = poiDetailResult.describeContents();
+                    String detailUrl = poiDetailResult.getDetailUrl();
+                    String name = poiDetailResult.getName();
+                    double price = poiDetailResult.getPrice();
+                    Log.e("===onGetPoiDetailResult", "***" + address);
+                    Log.e("===onGetPoiDetailResult", "***" + i);
+                    Log.e("===onGetPoiDetailResult", "***" + detailUrl);
+                    Log.e("===onGetPoiDetailResult", "***" + name);
+                    Log.e("===onGetPoiDetailResult", "***" + price);
+                }
+            }
+
+            @Override
+            public void onGetPoiIndoorResult(PoiIndoorResult poiIndoorResult) {
+
+            }
+        };
+        poiSearch.setOnGetPoiSearchResultListener(poiSearchResultListener);
+        poiSearch.searchNearby(new PoiNearbySearchOption()
+        .keyword("餐饮").location(new LatLng(lat,lng))
+                .radius(5000)
+        .pageNum(10));
+        
     }
 
     private void setClickListener() {
-
         rgb_bottom.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -134,6 +191,7 @@ public class MainActivity extends AppCompatActivity implements BDLocationListene
     public void onDestroy() {
         super.onDestroy();
         baiduMap.onDestroy();
+        poiSearch.destroy();
     }
 
     @Override
@@ -156,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements BDLocationListene
             this.lat=lat;
             this.lng=lng;
             String city = bdLocation.getCity();
+            Log.e("city",city+lat+lng);
             flag++;
             if (flag==1){
                 Toast.makeText(MainActivity.this, "定位成功。。。", Toast.LENGTH_SHORT).show();
@@ -182,4 +241,5 @@ public class MainActivity extends AppCompatActivity implements BDLocationListene
         option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤GPS仿真结果，默认需要
         locationClient.setLocOption(option);
     }
+    
 }

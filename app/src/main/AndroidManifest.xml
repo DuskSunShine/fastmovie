@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.scy.fastmovie">
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
@@ -36,8 +37,9 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -47,8 +49,8 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="4PkFIi2Gl6llrTbfOnqZTFXpgBioGGoZ" />
-
+            android:value="luuHMb7AYWQN999Si2TsQ6dYAnuyADXC" />
+        <!-- 4PkFIi2Gl6llrTbfOnqZTFXpgBioGGoZ -->
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,23 +73,24 @@
         <activity android:name=".activity.SubjiectOfTalkActivity" />
         <activity android:name=".activity.OrderForGoodsActivity" />
         <activity android:name=".activity.MyInfoActivity" />
-        <activity android:name=".activity.HeadImageActivity"></activity>
+        <activity android:name=".activity.HeadImageActivity" />
         <activity android:name=".activity.TodayTopTenActivity" />
         <activity android:name=".activity.FastMsgActivity" />
         <activity android:name=".activity.PiaoFangActivity" />
-        <activity android:name=".activity.DiscoverItemActivity"></activity>
-       
-       
+        <activity android:name=".activity.DiscoverItemActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
             <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
             <intent-filter>
                 <data android:scheme="tencent100371282" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -95,16 +98,18 @@
             <!-- 新浪微博客户端分享回调必须配置 -->
             <intent-filter>
                 <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <!--微信分享回调 -->
+        <!-- 微信分享回调 -->
         <activity
             android:name=".wxapi.WXEntryActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".activity.SearchCinemaActivity"></activity>
     </application>
 
 </manifest>

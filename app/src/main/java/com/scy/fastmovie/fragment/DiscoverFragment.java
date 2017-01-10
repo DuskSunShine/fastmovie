@@ -71,9 +71,6 @@ public class DiscoverFragment extends Fragment implements
 
          head=inflater.inflate(R.layout.discover_item_head,null);
         initViews();
-
-        head=inflater.inflate(R.layout.discover_item_head,null);
-        initViews();
         //fragment设置toolbar
         ((AppCompatActivity)context).setSupportActionBar(discover_toolbar);
         //添加ListView头

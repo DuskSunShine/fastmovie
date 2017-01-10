@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="6"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/cinema_nm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:singleLine="true"/>
+        <com.scy.fastmovie.customviews.MyTextView
+            android:id="@+id/cinema_sellPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cinema_nm"/>
+        <TextView
+            android:id="@+id/cinema_addr"
+            android:layout_below="@+id/cinema_nm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/cinema_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
