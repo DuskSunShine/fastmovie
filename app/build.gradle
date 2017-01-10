@@ -43,4 +43,5 @@ dependencies {
     compile 'com.makeramen:roundedimageview:2.3.0'
     compile 'com.android.support:design:24.2.0'
     testCompile 'junit:junit:4.12'
+    compile files('libs/MobCommons-2016.1222.1756.jar')
 }

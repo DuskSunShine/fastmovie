@@ -25,4 +25,6 @@
     <string name="AllFilm">全部电影奖项</string>
     <string name="prevue">预告片推荐</string>
     <string name="prospect">近期最受期待</string>
+    <string name="xiepin">写评论...</string>
+    <string name="fabiao">发表</string>
 </resources>

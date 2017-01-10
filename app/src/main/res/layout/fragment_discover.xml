@@ -13,18 +13,22 @@
             android:id="@+id/discover_toolbar"
             android:background="@color/colorPrimary"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
-            <Button
+            android:layout_height="50dp"
+            >
+            <EditText
+                android:focusableInTouchMode="false"
+                android:cursorVisible="false"
                 android:id="@+id/search_edit"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
+                android:drawablePadding="10dp"
                 android:hint="@string/search_news"
                 android:textColor="@color/hui"
                 android:drawableLeft="@mipmap/a1v"
                 android:background="@drawable/search_shape"
-                />
+                android:textSize="16sp"/>
         </android.support.v7.widget.Toolbar>
     </LinearLayout>
     

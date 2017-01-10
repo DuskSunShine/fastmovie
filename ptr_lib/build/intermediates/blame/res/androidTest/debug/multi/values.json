@@ -1,5 +1,279 @@
 [
     {
+        "outputFile": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1660,
+                    "endColumn": 63,
+                    "endOffset": 1719
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1660,
+                        "endColumn": 63,
+                        "endOffset": 1719
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1724,
+                    "endColumn": 63,
+                    "endOffset": 1783
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1724,
+                        "endColumn": 63,
+                        "endOffset": 1783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1788,
+                    "endColumn": 54,
+                    "endOffset": 1838
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1788,
+                        "endColumn": 54,
+                        "endOffset": 1838
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1843,
+                    "endColumn": 56,
+                    "endOffset": 1895
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1843,
+                        "endColumn": 56,
+                        "endOffset": 1895
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1900,
+                    "endColumn": 54,
+                    "endOffset": 1950
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1900,
+                        "endColumn": 54,
+                        "endOffset": 1950
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1955,
+                    "endColumn": 37,
+                    "endOffset": 1988
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1955,
+                        "endColumn": 37,
+                        "endOffset": 1988
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1993,
+                    "endColumn": 39,
+                    "endOffset": 2028
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 1993,
+                        "endColumn": 39,
+                        "endOffset": 2028
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 2033,
+                    "endColumn": 36,
+                    "endOffset": 2065
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 2033,
+                        "endColumn": 36,
+                        "endOffset": 2065
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 2070,
+                    "endColumn": 74,
+                    "endOffset": 2140
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 2070,
+                        "endColumn": 74,
+                        "endOffset": 2140
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 2145,
+                    "endColumn": 79,
+                    "endOffset": 2220
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 2145,
+                        "endColumn": 79,
+                        "endOffset": 2220
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 2225,
+                    "endColumn": 78,
+                    "endOffset": 2299
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 2225,
+                        "endColumn": 78,
+                        "endOffset": 2299
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 2304,
+                    "endColumn": 62,
+                    "endOffset": 2362
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 2304,
+                        "endColumn": 62,
+                        "endOffset": 2362
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 2367,
+                    "endColumn": 67,
+                    "endOffset": 2430
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 2367,
+                        "endColumn": 67,
+                        "endOffset": 2430
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 2435,
+                    "endColumn": 66,
+                    "endOffset": 2497
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 2435,
+                        "endColumn": 66,
+                        "endOffset": 2497
+                        "endOffset": 2348
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
         "map": [
             {

@@ -4,6 +4,7 @@ import com.scy.fastmovie.bean.BannerBean;
 import com.scy.fastmovie.bean.DiscoverBean;
 import com.scy.fastmovie.bean.HotFragmentBean;
 import com.scy.fastmovie.bean.SeekBean;
+import com.scy.fastmovie.bean.SearchResultBean;
 import com.scy.fastmovie.bean.WaitFragmentBean;
 import com.scy.fastmovie.bean.WaitGlobalAwards;
 import com.scy.fastmovie.bean.WaitGridBean;
@@ -11,6 +12,7 @@ import com.scy.fastmovie.bean.WaitMostBean;
 import com.scy.fastmovie.bean.WaitYuGaoBean;
 
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -35,6 +37,20 @@ public interface HttpApiService {
             @Query("utm_content")String utm_content,@Query("utm_medium")String utm_medium,@Query("utm_source")String utm_source,
             @Query("utm_term")String utm_term,@Query("uuid")String uuid
     );
+    //查找资讯
+    //查找资讯 http://api.maoyan.com/mmdb/search/integrated/keyword/list.json?
+    // almtype=1&keyword=水&stype=4&refer=0&iscorrected=true&limit=10&offset=0&ci=59
+    @GET("mmdb/search/integrated/keyword/list.json?")
+    Observable<SearchResultBean>getSearchResultData(
+            @Query("almtype") String almtype,
+            @Query("keyword") String keyword,
+            @Query("stype") String stype,
+            @Query("refer") String refer,
+            @Query("iscorrected") String iscorrected,
+            @Query("limit") String limit,
+            @Query("offset") String offset,
+            @Query("ci") String ci
+    );
     @GET("api/v3/adverts?")
     Observable<BannerBean>getBannerData(
             @Query("__reqTraceID")String __reqTraceID,@Query("__skck")String __skck,@Query("__skcy")String __skcy,
@@ -57,6 +73,9 @@ public interface HttpApiService {
             @Query("utm_content")String utm_content,@Query("ci")String ci,@Query("net")String net,@Query("dModel")String dModel,
             @Query("uuid")String uuid,@Query("refer")String refer
     );
+    //资讯评论
+    // http://api.maoyan.com/sns/news/comment.json?
+    //ci=59&newsId=17947&text=heheh
 
     @GET("mmdb/movieboard/fixedboard/v1/hot/list.json?")
     Observable<WaitGridBean>getWaitGridData(
