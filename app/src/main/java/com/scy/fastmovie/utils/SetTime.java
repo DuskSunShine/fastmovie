@@ -21,7 +21,7 @@ public class SetTime {
         Calendar calendar = Calendar.getInstance();
         long now = calendar.getTimeInMillis();
         //发表时间
-        long past = Long.parseLong(sendTime);
+        long past = Long.parseLong(sendTime);//有的情况要*1000
 
         // 相差的秒数  
         long time = (now - past) / 1000;

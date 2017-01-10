@@ -91,6 +91,8 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
                 Log.i("===onTextChanged==",s.toString());
                 if (s.toString()!=null){
                     search_result_list.setRefreshing();
+                    resultAdapter.setKeyword(s.toString());
+                    resultAdapter.setKeyword(s.toString());
                     initData(s.toString(),0);
                 }
 
@@ -101,6 +103,7 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
                 Log.i("==afterTextChanged===",s.toString());
                 if (s.toString()!=null){
                     data.clear();
+                    resultAdapter.setKeyword(s.toString());
                     search_result_list.setRefreshing();
                     initData(s.toString(),0);
                 }
