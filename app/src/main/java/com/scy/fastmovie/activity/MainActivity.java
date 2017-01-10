@@ -3,6 +3,7 @@ package com.scy.fastmovie.activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import java.util.List;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,7 +13,7 @@ import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
+import java.util.List;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -40,10 +41,10 @@ import com.scy.fastmovie.utils.NetWorkUtils;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements BDLocationListener{
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements
-        BDLocationListener{
+
+
+
 
     private RadioGroup rgb_bottom;
     private RadioButton rb1;
