@@ -7,10 +7,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.activity.MainActivity;
 import com.scy.fastmovie.bean.HotFragmentBean;
 import com.scy.fastmovie.customviews.MyTextView;
 
@@ -56,6 +58,7 @@ public class HotAdapter extends BaseAdapter {
         ImageView img_flag;
         MyTextView tv_detail,tv_session;
         View itemView;
+        RelativeLayout layout;
 
         public ViewHolder(View itemView) {
             this.itemView = itemView;
@@ -67,10 +70,12 @@ public class HotAdapter extends BaseAdapter {
             tv_session= ((MyTextView) itemView.findViewById(R.id.tv_session));
             tv_audience= ((TextView) itemView.findViewById(R.id.audience));
             buy_ticket= ((TextView) itemView.findViewById(R.id.buy_ticket));
+            layout= ((RelativeLayout) itemView.findViewById(R.id.relativelayout));
         }
     }
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView( int position, View convertView, ViewGroup parent) {
+        final int p=position;
         ViewHolder viewHolder=null;
         if (convertView==null){
             convertView= LayoutInflater.from(context).inflate(R.layout.hot_item,parent,false);
@@ -97,8 +102,13 @@ public class HotAdapter extends BaseAdapter {
                     viewHolder.buy_ticket.setText("预售");
                 }
             }
-            Glide.with(context).load(data.get(position).getImg())
-                    .placeholder(R.mipmap.ic_launcher)
+            String path=data.get(position).getImg();
+            String[] split = path.split("/w.h/");
+            String imgUrl=split[0]+"/"+split[1];
+            Glide.with(context).load(imgUrl)
+                    .placeholder(R.mipmap.holder)
+                    .thumbnail(0.5f)
+                    .skipMemoryCache(true)
                     .into(viewHolder.img);
             if (data.get(position).getSc()==0){
                 viewHolder.tv_audience.setText("暂无评分");
@@ -113,7 +123,39 @@ public class HotAdapter extends BaseAdapter {
             }else {
                 viewHolder.tv_grade.setVisibility(View.VISIBLE);
             }
+            viewHolder.layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    scall.onRelativeClick(data.get(p).getVideourl());
+                }
+            });
+            viewHolder.img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    scall.onRelativeClick(data.get(p).getVideourl());
+                }
+            });
+            viewHolder.buy_ticket.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    stcall.onRelativeClick(((TextView)v).getText()+"/111/"+data.get(p).getNm());
+                }
+            });
         }
         return convertView;
+    }
+    public static interface Call{
+        public void onRelativeClick(String path);
+    }
+    public static Call scall=null;
+    public static void setOnRelativeClickListener(Call call){
+        scall=call;
+    }
+    public static interface CallText{
+        public void onRelativeClick(String path);
+    }
+    public static CallText stcall=null;
+    public static void setOnRelativeClickListener(CallText call){
+        stcall=call;
     }
 }

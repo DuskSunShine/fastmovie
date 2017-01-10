@@ -2,8 +2,10 @@ package com.scy.fastmovie.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,8 @@ import android.widget.Toast;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.activity.HotItemDetaiActivity;
+import com.scy.fastmovie.activity.MainActivity;
 import com.scy.fastmovie.adapter.BannerAdapter;
 import com.scy.fastmovie.adapter.HotAdapter;
 import com.scy.fastmovie.baseurl.BaseUrl;
@@ -43,16 +47,13 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
     private View view;
     private PullToRefreshListView listView;
     private HotAdapter hotAdapter;
-//    private int total=12;
     int num=0;
-    static int flag=0;
     private List<HotFragmentBean.DataBean.HotBean>data=new ArrayList<>();
     private List<HotFragmentBean.DataBean.HotBean>datas=new ArrayList<>();
-//    private ListView listViews;
-//    private BannerAdapter bannerAdapter;
-//    AutoScrollViewPager viewPager;
+    private ListView listViews;
+    private BannerAdapter bannerAdapter;
+    AutoScrollViewPager viewPager;
     Context context;
-//    List<BannerBean.DataBean>imgUrlLists=new ArrayList<>();
 
     public HotFragment() {
         // Required empty public constructor
@@ -67,15 +68,35 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        data.clear();
+        datas.clear();
         view = inflater.inflate(R.layout.fragment_hot, container, false);
         initViews();
         DoSomething();
-
+        setOnClickListeners();
         return view;
     }
 
-    /*private void loadBannerData() {
+    private void setOnClickListeners() {
+        HotAdapter.setOnRelativeClickListener(new HotAdapter.Call() {
+            @Override
+            public void onRelativeClick(String path) {
+                Intent intent = new Intent(context, HotItemDetaiActivity.class);
+                intent.putExtra("path",path);
+                startActivity(intent);
+                ((AppCompatActivity)context).overridePendingTransition(0,0);
+            }
+        });
+        HotAdapter.setOnRelativeClickListener(new HotAdapter.CallText() {
+            @Override
+            public void onRelativeClick(String path) {
+                String[] split = path.split("/111/");
+                Toast.makeText(context, split[0]+"'"+split[1]+"'"+"电影票成功", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void loadBannerData() {
         Retrofit retrofit=new Retrofit.Builder().baseUrl(BaseUrl.MEITUAN)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
@@ -101,19 +122,18 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
 
                     @Override
                     public void onNext(BannerBean bannerBean) {
-                        imgUrlLists.addAll(bannerBean.getData());
-                        bannerAdapter.notifyDataSetChanged();
-                        initDatas();
+                        bannerAdapter.setData(bannerBean.getData());
+//                        initDatas();
                     }
                 });
-    }*/
+    }
 
     private void DoSomething() {
-        flag++;
+
         listView.setMode(PullToRefreshBase.Mode.BOTH);
         listView.setOnRefreshListener(this);
 
-//        viewPager.setCurrentItem(Integer.MAX_VALUE / 2 - Integer.MAX_VALUE / 2 %imgUrlLists.size());
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -121,24 +141,22 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
 
             }
         });
-//        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.banner_pager, null);
-//        viewPager = (AutoScrollViewPager) inflate.findViewById(R.id.viewPager);
-//        viewPager.setInterval(2000);
-//        bannerAdapter = new BannerAdapter(getContext(),imgUrlLists);
-//        viewPager.setAdapter(bannerAdapter);
-//        listViews.addHeaderView(viewPager);
-//        viewPager.startAutoScroll();
+        View inflate = LayoutInflater.from(context).inflate(R.layout.banner_pager, null);
+        viewPager = (AutoScrollViewPager) inflate.findViewById(R.id.viewPager);
+        viewPager.setInterval(2000);
+        bannerAdapter = new BannerAdapter(context);
+        viewPager.setAdapter(bannerAdapter);
+        listViews.addHeaderView(inflate);
+        viewPager.startAutoScroll();
         hotAdapter = new HotAdapter(context);
         listView.setAdapter(hotAdapter);
-        if (!this.isDetached()&&flag==1){
-            listView.setRefreshing();
-        }
+        listView.setRefreshing();
 
     }
 
     private void initViews() {
         listView = (PullToRefreshListView) view.findViewById(R.id.list);
-//        listViews = listView.getRefreshableView();
+        listViews = listView.getRefreshableView();
     }
 
     @Override
@@ -148,8 +166,8 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
             num=0;
             data.clear();
             datas.clear();
-//            loadBannerData();
             initDatas();
+            loadBannerData();
 
         }else {
             listView.postDelayed(new Runnable() {
@@ -188,8 +206,6 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
 
                     @Override
                     public void onNext(HotFragmentBean hotFragmentBean) {
-                        //hotAdapter.setData(hotFragmentBean.getData().getHot());
-//                        total=hotFragmentBean.getData().getTotal();
                         data.addAll(hotFragmentBean.getData().getHot());
                         for (int i =0; i <data.size()/3 ; i++) {
                             datas.add(data.get(i));
@@ -209,9 +225,9 @@ public class HotFragment extends Fragment implements PullToRefreshBase.OnRefresh
     @Override
     public void onPullUpToRefresh(PullToRefreshBase refreshView) {
         //上拉加载
-        if (NetWorkUtils.isConnect(getContext())){
+        if (NetWorkUtils.isConnect(context)){
             if (num==2){
-                Toast.makeText(getContext(), "没有新数据了...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "没有新数据了...", Toast.LENGTH_SHORT).show();
                 listView.postDelayed(new Runnable() {
                     @Override
                     public void run() {

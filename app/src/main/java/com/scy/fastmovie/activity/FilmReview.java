@@ -7,6 +7,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class FilmReview extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class FilmReview extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_film_review);
+        ShuJu.activitys.add(this);
         initdata();
     }
 

@@ -3,9 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorARed">#d2cb20e9</color>
     <color name="white">#fff</color>
     <color name="hui">#e6e6ec</color>
     <color name="black">#000</color>
     <color name="yellow">#f9de16</color>
     <color name="gray">#ccc</color>
+    <color name="h">#f9f7f7</color>
 </resources>

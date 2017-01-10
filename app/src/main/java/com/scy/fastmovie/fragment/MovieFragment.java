@@ -1,6 +1,7 @@
 package com.scy.fastmovie.fragment;
 
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -48,7 +49,12 @@ public class MovieFragment extends Fragment implements DataCallBack{
     private Spinner spinner;
     private List<String>lists=new ArrayList();
     private MyTextView tv_heard;
-
+    Context context;
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context=context;
+    }
 
     public MovieFragment() {
         // Required empty public constructor
@@ -70,7 +76,7 @@ public class MovieFragment extends Fragment implements DataCallBack{
         spinner.setVisibility(View.INVISIBLE);
         adapter = new FragmentAdapter(getChildFragmentManager(), data);
         pager.setAdapter(adapter);
-        spinner.setAdapter(new ArrayAdapter<String>(getContext(),
+        spinner.setAdapter(new ArrayAdapter<String>(context,
                 R.layout.spinner_item,R.id.tv,lists));
 
         return view;

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 import com.scy.fastmovie.adapter.WantToSeehotAdapter;
 import com.scy.fastmovie.baseurl.BaseUrl;
 import com.scy.fastmovie.bean.WantToSeeBean;
@@ -43,6 +44,7 @@ public class WantToSeeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_want_to_see);
+        ShuJu.activitys.add(this);
         initdata();
         radiobutton = (RadioButton) group1.getChildAt(0);
         radiobutton.setChecked(true);

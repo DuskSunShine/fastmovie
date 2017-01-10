@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.baseurl.BaseUrl;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class TodayTopTenActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class TodayTopTenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_today_top_ten);
+        ShuJu.activitys.add(this);
         btn_top_cancel = (ImageButton) findViewById(R.id.btn_top_cancel);
         top_webView = (WebView) findViewById(R.id.top_webView);
         top_progress = (ProgressBar) findViewById(R.id.top_progress);
@@ -40,6 +42,7 @@ public class TodayTopTenActivity extends AppCompatActivity {
                 }
             }
         });
+        top_webView.setWebViewClient(new WebViewClient());
         btn_top_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

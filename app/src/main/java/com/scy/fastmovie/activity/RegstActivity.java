@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class RegstActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class RegstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regst);
+        ShuJu.activitys.add(this);
         initdata();
     }
 

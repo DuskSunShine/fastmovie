@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class ToTakeALookAt extends AppCompatActivity {
 
@@ -37,6 +38,7 @@ public class ToTakeALookAt extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_take_alook_at);
+        ShuJu.activitys.add(this);
         initdata();
 
 

@@ -37,7 +37,7 @@ public class PiaoFangActivity extends AppCompatActivity {
                 }
             }
         });
-        
+        piao_webView.setWebViewClient(new WebViewClient());
         btn_piao_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
