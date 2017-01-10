@@ -25,12 +25,12 @@ public class CinemaAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     public void setData(List<CinemaBean> data) {
         this.data = data;
+        inflater=LayoutInflater.from(context);
         notifyDataSetChanged();
     }
 
     public CinemaAdapter(Context context) {
         this.context = context;
-        inflater=LayoutInflater.from(context);
     }
 
     @Override
