@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -13,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ShuJu.activitys.add(this);
     }
 
     public void regist(View view) {

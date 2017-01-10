@@ -2,26 +2,10 @@
     {
         "merged": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
         "source": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
-        "merged": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
-        "source": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
-        "source": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
-        "source": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_top.xml",
-        "source": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_top.xml"
-        "merged": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",
-        "source": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_in_from_bottom.xml"
-    },
-    {
-        "merged": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_bottom.xml",
-        "source": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_bottom.xml"
+        "merged": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_out_to_top.xml",
+        "source": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\anim\\slide_out_to_top.xml"
     },
     {
         "merged": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\slide_in_from_bottom.xml",

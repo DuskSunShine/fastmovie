@@ -2,11 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:padding="8dp"
+    android:descendantFocusability="blocksDescendants"
+    android:id="@+id/relativelayout"
     android:layout_height="100dp">
     <ImageButton
         android:layout_centerVertical="true"
         android:id="@+id/img"
         android:background="@null"
+        android:scaleType="centerInside"
         android:layout_width="50dp"
         android:layout_height="80dp" />
     <LinearLayout
@@ -84,7 +87,6 @@
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:textColor="@color/colorPrimary"
-        android:text="@string/buy_ticket"
         android:background="@drawable/hot_tv_shape"
         android:layout_height="wrap_content" />
 </RelativeLayout>

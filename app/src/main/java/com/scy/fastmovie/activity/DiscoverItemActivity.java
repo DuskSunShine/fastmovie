@@ -20,11 +20,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
-public class DiscoverItemActivity extends AppCompatActivity 
+public class DiscoverItemActivity extends AppCompatActivity
         implements View.OnClickListener{
 
     private ImageButton btn_item_cancel,share;
@@ -49,6 +50,7 @@ public class DiscoverItemActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover_item);
         ShareSDK.initSDK(this);
+        ShuJu.activitys.add(this);
         initViews();
         share.setOnClickListener(this);
         star.setOnClickListener(this);
@@ -87,7 +89,7 @@ public class DiscoverItemActivity extends AppCompatActivity
                     }
                 }
             }catch (Exception e){
-                
+
             }finally {
                 item_web.setWebChromeClient(new WebChromeClient(){
                     @Override
@@ -166,16 +168,16 @@ public class DiscoverItemActivity extends AppCompatActivity
                 toComment.setBackgroundResource(R.mipmap.gray);
                 break;
             case R.id.toComment:
-                
+
                 break;
             case R.id.share:
                 Share();
                 break;
         }
     }
-    
+
 //    private void Comment(){
-//        
+//
 //    }
     private void Share(){
         OnekeyShare oks = new OnekeyShare();
@@ -216,7 +218,7 @@ public class DiscoverItemActivity extends AppCompatActivity
                 return;
             }
         }catch (Exception e){
-            
+
         }finally {
             // text是分享文本，所有平台都需要这个字段
             if (source!=null){

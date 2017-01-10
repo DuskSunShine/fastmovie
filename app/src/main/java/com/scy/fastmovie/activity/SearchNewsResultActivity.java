@@ -15,6 +15,7 @@ import android.widget.EditText;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 import com.scy.fastmovie.adapter.SearchResultAdapter;
 import com.scy.fastmovie.baseurl.BaseUrl;
 import com.scy.fastmovie.bean.SearchResultBean;
@@ -34,7 +35,7 @@ import rx.schedulers.Schedulers;
 /**
  * 点击查找资讯跳转后界面
  */
-public class SearchNewsResultActivity extends AppCompatActivity implements 
+public class SearchNewsResultActivity extends AppCompatActivity implements
         PullToRefreshBase.OnRefreshListener2,AdapterView.OnItemClickListener{
     private Toolbar result_toolbar;
     private EditText search_edit_result;
@@ -47,13 +48,14 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_news_result);
+        ShuJu.activitys.add(this);
         initViews();
         setSupportActionBar(result_toolbar);
         search_result_list.setMode(PullToRefreshBase.Mode.PULL_FROM_END);
         setListener();
         resultAdapter=new SearchResultAdapter(this);
         search_result_list.setAdapter(resultAdapter);
-        
+
     }
     /**
      * 初始化布局
@@ -93,7 +95,7 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
                     resultAdapter.setKeyword(s.toString());
                     initData(s.toString(),0);
                 }
-                
+
             }
 
             @Override
@@ -105,11 +107,11 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
                     search_result_list.setRefreshing();
                     initData(s.toString(),0);
                 }
-                
+
             }
         });
     }
-    
+
     private void initData(String keyword,int pageNo){
         Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl(BaseUrl.DISCOVERBASEURL)
@@ -125,7 +127,7 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
                 .subscribe(new Subscriber<SearchResultBean>() {
                     @Override
                     public void onCompleted() {
-                        
+
                     }
 
                     @Override
@@ -149,7 +151,7 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
 
     @Override
     public void onPullDownToRefresh(PullToRefreshBase refreshView) {
-        
+
     }
 
     @Override
@@ -166,6 +168,6 @@ public class SearchNewsResultActivity extends AppCompatActivity implements
             intent.putExtra("title1",data.get(position-1).getTitle());
             startActivity(intent);
             overridePendingTransition(0,0);
-        
+
     }
 }

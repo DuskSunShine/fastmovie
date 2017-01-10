@@ -3,9 +3,14 @@ package com.scy.fastmovie.httpapiservice;
 import com.scy.fastmovie.bean.BannerBean;
 import com.scy.fastmovie.bean.DiscoverBean;
 import com.scy.fastmovie.bean.HotFragmentBean;
+import com.scy.fastmovie.bean.SeekBean;
 import com.scy.fastmovie.bean.SearchCinemaBean;
 import com.scy.fastmovie.bean.SearchResultBean;
 import com.scy.fastmovie.bean.WaitFragmentBean;
+import com.scy.fastmovie.bean.WaitGlobalAwards;
+import com.scy.fastmovie.bean.WaitGridBean;
+import com.scy.fastmovie.bean.WaitMostBean;
+import com.scy.fastmovie.bean.WaitYuGaoBean;
 
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -73,16 +78,35 @@ public interface HttpApiService {
             @Query("utm_term")String utm_term,@Query("uuid")String uuid,@Query("version")String version
     );
 
-    @GET("mmdb/movie/v2/list/rt/order/coming.json?")
-    Observable<WaitFragmentBean>getWaitData(
-            @Query("ci")String ci,@Query("limit")String limit,@Query("token")String token,@Query("utm_campaign")String utm_campaign,
-            @Query("movieBundleVersion")String movieBundleVersion,@Query("utm_source")String utm_source,@Query("utm_medium")String utm_medium,
-            @Query("utm_term")String utm_term,@Query("utm_content")String utm_content,@Query("net")String net,@Query("dModel")String dModel,
-            @Query("uuid")String uuid,@Query("lat")String lat,@Query("lng")String lng,@Query("__reqTraceID")String __reqTraceID,
-            @Query("refer")String refer,@Query("__skck")String __skck,@Query("__skts")String __skts,@Query("__skua")String __skua,
-            @Query("__skno")String __skno,@Query("__skcy")String __skcy
+    @GET("mmdb/movie/v2/list/rt/order/coming.json?ci=59&limit=12&token=yCbV9r7zv52i2GREfcA5QzgOxZ4AAAAAVwMAAASv4m3kDleIy_CBlG7s3oBfOURRpnznoBfbFWZP48AFbiQWN4bVxIjbVw-pGe-v6w&utm_campaign=AmovieBmovieCD100&movieBundleVersion=7701&utm_source=yingyonghui1-dy&utm_medium=android&utm_term=7.7.0&utm_content=866928026893953&net=255&dModel=BM002-G5&uuid=92D0E32E8154E517B48491A8CC0405BBF548E493CDDBD0CC6D5094ACBB73B113&lat=30.662599&lng=104.040563&__reqTraceID=6432106778393259332&refer=%2FWelcome&__skck=6a375bce8c66a0dc293860dfa83833ef&__skts=1482737690056&__skua=32bcf146c756ecefe7535b95816908e3&__skno=91c75473-da60-4e01-9deb-f83edbc2584f&__skcy=jqkeyC7AD4%2Fr8s4JrSk%2B%2FjdGd9c%3D")
+    Observable<WaitFragmentBean>getWaitData();
+    @GET("mmdb/search/movie/tag/types.json?")
+    Observable<SeekBean>getSeekData(
+            @Query("token")String token,@Query("utm_campaign")String utm_campaign,@Query("movieBundleVersion")String movieBundleVersion,
+            @Query("utm_source")String utm_source,@Query("utm_medium")String utm_medium,@Query("utm_term")String utm_term,
+            @Query("utm_content")String utm_content,@Query("ci")String ci,@Query("net")String net,@Query("dModel")String dModel,
+            @Query("uuid")String uuid,@Query("refer")String refer
     );
     //资讯评论
     // http://api.maoyan.com/sns/news/comment.json?
     //ci=59&newsId=17947&text=heheh
+
+    @GET("mmdb/movieboard/fixedboard/v1/hot/list.json?")
+    Observable<WaitGridBean>getWaitGridData(
+            @Query("utm_campaign")String utm_campaign,@Query("movieBundleVersion")String movieBundleVersion,@Query("utm_source")String utm_source,
+            @Query("utm_medium")String utm_medium,@Query("utm_term")String utm_term,@Query("utm_content")String utm_content,
+            @Query("ci")String ci,@Query("net")String net,@Query("dModel")String dModel,@Query("uuid")String uuid,@Query("refer")String refer
+
+    );
+    @GET("mmdb/movie/winning/film/2016-12-26/list.json?")
+    Observable<WaitGlobalAwards>getWaitGlobalAwardsData(
+            @Query("utm_campaign")String utm_campaign,@Query("movieBundleVersion")String movieBundleVersion,@Query("utm_source")String utm_source,
+            @Query("utm_medium")String utm_medium,@Query("utm_term")String utm_term,@Query("utm_content")String utm_content,
+            @Query("ci")String ci,@Query("net")String net,@Query("dModel")String dModel,@Query("uuid")String uuid,@Query("refer")String refer
+    );
+    @GET("mmdb/movie/lp/list.json?utm_campaign=AmovieBmovieCD100&movieBundleVersion=7701&utm_source=yingyonghui1-dy&utm_medium=android&utm_term=7.7.0&utm_content=866928026893953&ci=59&net=255&dModel=BM002-G5&uuid=92D0E32E8154E517B48491A8CC0405BBF548E493CDDBD0CC6D5094ACBB73B113&refer=%2FWelcome")
+    Observable<WaitYuGaoBean>getYuGaoData();
+
+    @GET("mmdb/movie/v1/list/wish/order/coming.json?token=yCbV9r7zv52i2GREfcA5QzgOxZ4AAAAAVwMAAASv4m3kDleIy_CBlG7s3oBfOURRpnznoBfbFWZP48AFbiQWN4bVxIjbVw-pGe-v6w&offset=0&limit=50&ci=59&utm_campaign=AmovieBmovieCD100&movieBundleVersion=7701&utm_source=yingyonghui1-dy&utm_medium=android&utm_term=7.7.0&utm_content=866928026893953&net=255&dModel=BM002-G5&uuid=92D0E32E8154E517B48491A8CC0405BBF548E493CDDBD0CC6D5094ACBB73B113&refer=%2FWelcome")
+    Observable<WaitMostBean>getMostData();
 }

@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -33,11 +34,15 @@ import com.scy.fastmovie.fragment.DiscoverFragment;
 import com.scy.fastmovie.fragment.MineFragment;
 import com.scy.fastmovie.fragment.MovieFragment;
 import com.scy.fastmovie.interfaces.DataCallBack;
+import com.scy.fastmovie.interfaces.ShuJu;
 import com.scy.fastmovie.utils.NetWorkUtils;
 
+import java.util.Date;
+
+public class MainActivity extends AppCompatActivity implements BDLocationListener{
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements 
+public class MainActivity extends AppCompatActivity implements
         BDLocationListener{
 
     private RadioGroup rgb_bottom;
@@ -50,12 +55,14 @@ public class MainActivity extends AppCompatActivity implements
     private MapView baiduMap;
     private LocationClient locationClient;
     double lat,lng;
+    long exitTime=0;
     int flag=0;
     private PoiSearch poiSearch;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ShuJu.activitys.add(this);
         if (Build.VERSION.SDK_INT>=21){
             getWindow().setStatusBarColor(Color.argb(200,63,81,181));
         }
@@ -92,9 +99,9 @@ public class MainActivity extends AppCompatActivity implements
                         Log.e("===onGetPoiResult===", "***" +allAddr );
                     }
                     int totalPageNum = poiResult.getTotalPageNum();
-                    
+
                     Log.e("===onGetPoiResult===", "***" + allPoi);
-                    
+
                     Log.e("===onGetPoiResult===", "***" + totalPageNum);
                 }
             }
@@ -125,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements
         .keyword("餐饮").location(new LatLng(lat,lng))
                 .radius(5000)
         .pageNum(10));
-        
+
     }
 
     private void setClickListener() {
@@ -207,6 +214,22 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode==KeyEvent.KEYCODE_BACK){
+            if (System.currentTimeMillis()-exitTime>2000){
+                Toast.makeText(MainActivity.this, "再次点击退出", Toast.LENGTH_SHORT).show();
+                exitTime=System.currentTimeMillis();
+            }else {
+                for (AppCompatActivity str:ShuJu.activitys){
+                    str.finish();
+                }
+            }
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
     public void onReceiveLocation(BDLocation bdLocation) {
         if (bdLocation.getLocType()==61||bdLocation.getLocType()==161){
             double lat=bdLocation.getLatitude();
@@ -218,7 +241,7 @@ public class MainActivity extends AppCompatActivity implements
             flag++;
             if (flag==1){
                 Toast.makeText(MainActivity.this, "定位成功。。。", Toast.LENGTH_SHORT).show();
-                ((DataCallBack)(new MovieFragment())).getDataCallBack(city);
+                ((DataCallBack)(fragment_movie)).getDataCallBack(city);
             }
 //            cityCode=bdLocation.getBuildingID();
 //            Toast.makeText(MainActivity.this,cityCode,Toast.LENGTH_LONG).show();
@@ -241,5 +264,5 @@ public class MainActivity extends AppCompatActivity implements
         option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤GPS仿真结果，默认需要
         locationClient.setLocOption(option);
     }
-    
+
 }
