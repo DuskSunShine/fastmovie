@@ -69,6 +69,7 @@ public class MineFragment extends Fragment  {
     @Override
     public void onPause() {
         super.onPause();
+
         HeadImageActivity.setOnCallBackListener(new MineDataCallBack() {
             @Override
             public void setDataCallBack(Bitmap bitmap) {
@@ -84,6 +85,7 @@ public class MineFragment extends Fragment  {
         super.onResume();
         getusername();
     }
+
 
     private void getusername() {
         SharedPreferences sp=getActivity().getSharedPreferences("regist", Context.MODE_PRIVATE);

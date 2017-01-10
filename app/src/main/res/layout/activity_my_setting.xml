@@ -184,4 +184,13 @@
         android:layout_height="0.5dp"
         android:background="#ccc"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="退出登录"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:onClick="tuichu"
+        />
 </LinearLayout>
