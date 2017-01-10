@@ -13,6 +13,7 @@ import com.scy.fastmovie.adapter.SubjectOfTalk;
 import com.scy.fastmovie.fragment.AttentionFragment;
 import com.scy.fastmovie.fragment.PublishFragment;
 import com.scy.fastmovie.fragment.ReplyFragment;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,7 @@ public class SubjiectOfTalkActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjiect_of_talk);
+        ShuJu.activitys.add(this);
         initdata();
 
     }

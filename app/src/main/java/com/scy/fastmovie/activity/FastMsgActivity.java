@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.baseurl.BaseUrl;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class FastMsgActivity extends AppCompatActivity {
 
@@ -22,6 +23,7 @@ public class FastMsgActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fast_msg);
+        ShuJu.activitys.add(this);
         btn_fast_cancel = (ImageButton) findViewById(R.id.btn_fast_cancel);
         fast_webView = (WebView) findViewById(R.id.fast_webView);
         fast_progress = (ProgressBar) findViewById(R.id.fast_progress);

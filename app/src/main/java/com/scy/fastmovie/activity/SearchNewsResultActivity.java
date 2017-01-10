@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 /**
  * 点击查找资讯跳转后界面
@@ -20,6 +21,7 @@ public class SearchNewsResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_news_result);
+        ShuJu.activitys.add(this);
         initViews();
         setSupportActionBar(result_toolbar);
         setListener();

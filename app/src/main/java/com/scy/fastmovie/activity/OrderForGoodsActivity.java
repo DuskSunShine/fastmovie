@@ -12,6 +12,7 @@ import com.scy.fastmovie.R;
 import com.scy.fastmovie.adapter.MyOrderAdapter;
 import com.scy.fastmovie.fragment.AmbitusShow;
 import com.scy.fastmovie.fragment.FilmFragment;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class OrderForGoodsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_for_goods);
+        ShuJu.activitys.add(this);
 initdata();
 
     }

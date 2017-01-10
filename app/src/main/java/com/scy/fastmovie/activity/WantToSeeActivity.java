@@ -7,6 +7,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class WantToSeeActivity extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class WantToSeeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_want_to_see);
+        ShuJu.activitys.add(this);
         initdata();
         radiobutton= (RadioButton) group1.getChildAt(0);
         radiobutton.setChecked(true);

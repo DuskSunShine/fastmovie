@@ -20,12 +20,14 @@ public class BannerAdapter extends PagerAdapter {
     Context context;
     List<BannerBean.DataBean>data;
 
-    public BannerAdapter(Context context,List<BannerBean.DataBean>data) {
+    public BannerAdapter(Context context) {
         this.context = context;
-        this.data=data;
     }
 
-
+    public void setData(List<BannerBean.DataBean> data) {
+        this.data = data;
+        notifyDataSetChanged();
+    }
 
     @Override
     public int getCount() {

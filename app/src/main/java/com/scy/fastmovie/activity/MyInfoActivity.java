@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class MyInfoActivity extends AppCompatActivity {
 
@@ -12,6 +13,7 @@ public class MyInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_info);
+        ShuJu.activitys.add(this);
     }
 
     public void back(View view) {

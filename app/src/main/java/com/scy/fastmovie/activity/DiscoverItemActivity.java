@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class DiscoverItemActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class DiscoverItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover_item);
+        ShuJu.activitys.add(this);
         initViews();
         Intent intent = getIntent();
        
