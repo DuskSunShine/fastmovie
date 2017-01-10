@@ -3,7 +3,6 @@
     package="com.scy.fastmovie">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +11,6 @@
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -62,7 +60,7 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="4PkFIi2Gl6llrTbfOnqZTFXpgBioGGoZ" />
         <!-- 4PkFIi2Gl6llrTbfOnqZTFXpgBioGGoZ -->
-        <!-- luuHMb7AYWQN999Si2TsQ6dYAnuyADXC  -->
+        <!-- luuHMb7AYWQN999Si2TsQ6dYAnuyADXC -->
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -87,7 +85,7 @@
         <activity android:name=".activity.MyInfoActivity" />
         <activity android:name=".activity.HeadImageActivity" />
         <activity android:name=".activity.SearchNewsResultActivity" />
-        <activity android:name=".activity.HeadImageActivity"></activity>
+        <activity android:name=".activity.HeadImageActivity" />
         <activity android:name=".activity.HeadImageActivity" />
         <activity android:name=".activity.TodayTopTenActivity" />
         <activity android:name=".activity.FastMsgActivity" />
@@ -95,18 +93,15 @@
         <activity android:name=".activity.DiscoverItemActivity" />
         <activity android:name=".activity.MyCollectActivity" />
         <activity android:name=".activity.MyAchievement" />
-        <activity android:name=".activity.MySettingActivity"></activity>
+        <activity android:name=".activity.MySettingActivity" />
         <activity android:name=".activity.PiaoFangActivity" />
         <activity android:name=".activity.DiscoverItemActivity" />
-        <activity android:name=".activity.HotItemDetaiActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+        <activity
+            android:name=".activity.HotItemDetaiActivity"
+            android:screenOrientation="landscape"></activity>
         <activity android:name=".activity.PiaoFangActivity" />
         <activity android:name=".activity.DiscoverItemActivity" />
-        <activity android:name=".activity.DiscoverItemActivity"></activity>
-
-
+        <activity android:name=".activity.DiscoverItemActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -138,7 +133,8 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity android:name=".activity.SearchCinemaActivity"></activity>
+        <activity android:name=".activity.SearchCinemaActivity" />
+        <activity android:name=".activity.SeeCinemaActivity"></activity>
     </application>
 
 </manifest>

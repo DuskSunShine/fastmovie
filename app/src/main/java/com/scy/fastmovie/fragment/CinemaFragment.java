@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -17,6 +18,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.activity.SearchCinemaActivity;
 import com.scy.fastmovie.activity.SearchNewsResultActivity;
+import com.scy.fastmovie.activity.SeeCinemaActivity;
 import com.scy.fastmovie.adapter.CinemaAdapter;
 import com.scy.fastmovie.bean.CinemaBean;
 import com.scy.fastmovie.db.DbManager;
@@ -27,7 +29,8 @@ import java.util.List;
 /**
  * 影院
  */
-public class CinemaFragment extends Fragment implements PullToRefreshBase.OnRefreshListener2{
+public class CinemaFragment extends Fragment implements 
+        PullToRefreshBase.OnRefreshListener2,AdapterView.OnItemClickListener{
     private Context context;
     private View view;
     private EditText search_cinema;
@@ -53,6 +56,7 @@ public class CinemaFragment extends Fragment implements PullToRefreshBase.OnRefr
         setListener();
         cinema_list.setMode(PullToRefreshBase.Mode.BOTH);
         cinemaAdapter=new CinemaAdapter(context);
+        cinema_list.setAdapter(cinemaAdapter);
         cinema_list.setRefreshing();
         return view;
     }
@@ -62,6 +66,7 @@ public class CinemaFragment extends Fragment implements PullToRefreshBase.OnRefr
     }
     private void setListener(){
         cinema_list.setOnRefreshListener(this);
+        cinema_list.setOnItemClickListener(this);
         search_cinema.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -151,7 +156,12 @@ public class CinemaFragment extends Fragment implements PullToRefreshBase.OnRefr
         cinemaBean = dbManager.queryByPage(pageNo, 10);
         cinemaAdapter.setData(cinemaBean);
         Log.i("==query",cinemaBean.size()+"");
-        cinema_list.onRefreshComplete();
+        cinema_list.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                cinema_list.onRefreshComplete(); 
+            }
+        },1000);
     }
     @Override
     public void onPullDownToRefresh(PullToRefreshBase refreshView) {
@@ -162,5 +172,11 @@ public class CinemaFragment extends Fragment implements PullToRefreshBase.OnRefr
     public void onPullUpToRefresh(PullToRefreshBase refreshView) {
        pageNo++;
         queryData(pageNo);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        startActivity(new Intent(context, SeeCinemaActivity.class));
+        ((AppCompatActivity)context).overridePendingTransition(0,0);
     }
 }

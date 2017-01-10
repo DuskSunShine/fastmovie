@@ -1,8 +1,6 @@
 [
     {
-        "outputFile": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-he\\values-he.xml",
-        "outputFile": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-he\\values-he.xml",
-        "outputFile": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-he\\values-he.xml",
+        "outputFile": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-he\\values-he.xml",
         "map": [
             {
                 "to": {
@@ -13,7 +11,7 @@
                     "endOffset": 118
                 },
                 "from": {
-                    "file": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
+                    "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -32,7 +30,7 @@
                     "endOffset": 185
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
+                    "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -51,27 +49,7 @@
                     "endOffset": 256
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
-                    "file": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 123,
-                        "endColumn": 66,
-                        "endOffset": 185
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 190,
-                    "endColumn": 70,
-                    "endOffset": 256
-                },
-                "from": {
-                    "file": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
+                    "file": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-he\\values-he.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
