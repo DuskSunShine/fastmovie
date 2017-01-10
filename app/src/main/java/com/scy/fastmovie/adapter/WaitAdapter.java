@@ -48,9 +48,9 @@ public class WaitAdapter extends BaseAdapter {
     static class ViewHolder{
         RelativeLayout layout;
         ImageButton img;
-        TextView tv_film,tv_grade,tv_audience,buy_ticket;
+        TextView tv_film,tv_grade,buy_ticket;
         ImageView img_flag;
-        MyTextView tv_detail,tv_session;
+        MyTextView tv_detail,tv_session,tv_audience;
         View itemView;
 
         public ViewHolder(View itemView) {
@@ -61,7 +61,7 @@ public class WaitAdapter extends BaseAdapter {
             img_flag= ((ImageView) itemView.findViewById(R.id.img_flag));
             tv_detail= ((MyTextView) itemView.findViewById(R.id.tv_detail));
             tv_session= ((MyTextView) itemView.findViewById(R.id.tv_session));
-            tv_audience= ((TextView) itemView.findViewById(R.id.audience));
+            tv_audience= ((MyTextView) itemView.findViewById(R.id.audience));
             buy_ticket= ((TextView) itemView.findViewById(R.id.buy_ticket));
             layout = ((RelativeLayout) itemView.findViewById(R.id.relativelayout));
         }
@@ -114,7 +114,8 @@ public class WaitAdapter extends BaseAdapter {
                 viewHolder.tv_grade.setText(data.get(position).getSc()+"");
             }
             if (data.get(position).getShowst()==4&&data.get(position).getSc()==0){
-                viewHolder.tv_audience.setText(data.get(position).getWish()+" 人想看");
+                viewHolder.tv_audience.setSpecifiedTextsColor(data.get(position).getWish()+" 人想看",data.get(position).getWish()+""
+                        ,context.getResources().getColor(R.color.yellow));
                 viewHolder.tv_grade.setVisibility(View.INVISIBLE);
             }else {
                 viewHolder.tv_grade.setVisibility(View.VISIBLE);
@@ -144,6 +145,7 @@ public class WaitAdapter extends BaseAdapter {
     }
     public static interface Call{
         public void onRelativeClick(String path);
+
     }
     public static Call scall=null;
     public static void setOnRelativeClickListener(Call call){
