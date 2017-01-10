@@ -32,6 +32,36 @@
                     "endOffset": 183
                 },
                 "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ja\\values-ja.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 120,
+                        "endColumn": 67,
+                        "endOffset": 183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 188,
+                    "endColumn": 66,
+                    "endOffset": 250
+                },
+                "from": {
+                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ja\\values-ja.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 188,
+                        "endColumn": 66,
+                        "endOffset": 250
+                    }
+                }
+            }
+        ]
                     "file": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ja\\values-ja.xml",
                     "position": {
                         "startLine": 3,

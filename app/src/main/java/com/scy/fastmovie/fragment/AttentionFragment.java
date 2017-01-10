@@ -15,10 +15,6 @@ import com.scy.fastmovie.R;
 public class AttentionFragment extends Fragment {
 
 
-    public AttentionFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

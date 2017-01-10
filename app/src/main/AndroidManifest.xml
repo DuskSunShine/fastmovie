@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.scy.fastmovie">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -89,6 +91,11 @@
         <activity android:name=".activity.HeadImageActivity" />
         <activity android:name=".activity.TodayTopTenActivity" />
         <activity android:name=".activity.FastMsgActivity" />
+        <activity android:name=".activity.PiaoFangActivity" />
+        <activity android:name=".activity.DiscoverItemActivity" />
+        <activity android:name=".activity.MyCollectActivity" />
+        <activity android:name=".activity.MyAchievement" />
+        <activity android:name=".activity.MySettingActivity"></activity>
         <activity android:name=".activity.PiaoFangActivity" />
         <activity android:name=".activity.DiscoverItemActivity" />
         <activity android:name=".activity.HotItemDetaiActivity"

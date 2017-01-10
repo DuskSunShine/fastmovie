@@ -51,6 +51,12 @@
                 },
                 "from": {
                     "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-de\\values-de.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 204,
+                        "endColumn": 86,
+                        "endOffset": 286
         "outputFile": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-de\\values-de.xml",
         "map": [
             {

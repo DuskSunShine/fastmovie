@@ -3,8 +3,12 @@ package com.scy.fastmovie.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
+
+
+import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +20,10 @@ import android.widget.Toast;
 
 import com.scy.fastmovie.R;
 import com.scy.fastmovie.interfaces.ShuJu;
+import com.scy.fastmovie.interfaces.MineDataCallBack;
 
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,6 +33,12 @@ public class HeadImageActivity extends AppCompatActivity {
 
     private ImageView headimage;
     private Button changeuserhead;
+    private Bundle extras;
+    private Bitmap bmp;
+    private Button sure_btn;
+    private File file;
+    private Bitmap bitmap;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +57,16 @@ public class HeadImageActivity extends AppCompatActivity {
     private void findviewbyid() {
         headimage = (ImageView) findViewById(R.id.headimage);
         changeuserhead = (Button) findViewById(R.id.changeuserhead);
+        sure_btn = (Button) findViewById(R.id.sure_btn);
+
+
     }
 
     private void setonclicklistener() {
-        headimage.setOnClickListener(new View.OnClickListener() {
+        sure_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 finish();
             }
         });
@@ -74,13 +91,13 @@ public class HeadImageActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which) {
+                            case 0:
+                                break;
                             case 1:
                                 getphotofromsdcard();
-//                                Toast.makeText(HeadImageActivity.this, "从本地选择照片", Toast.LENGTH_LONG).show();
                                 break;
                             case 2:
-                                getphotofromtakephoto();
-//                                Toast.makeText(HeadImageActivity.this, "我要拍照", Toast.LENGTH_LONG).show();
+                                getphotofromcamera();
                                 break;
 
                         }
@@ -99,39 +116,75 @@ public class HeadImageActivity extends AppCompatActivity {
 
     }
 
-    public void getphotofromtakephoto() {
+    public void getphotofromcamera() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        file = getStorageFile();
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+        startActivityForResult(intent, 520);
 
+    }
+
+    //创建放置照片的文件
+    private File getStorageFile() {
+        File imgpath = null;
+        if (hassdcard()) {
+            File root = Environment.getExternalStorageDirectory();
+            File directory = new File(root, "fastmovie");
+            if (!directory.exists()) {
+                directory.mkdirs();
+            }
+            imgpath = new File(directory, System.currentTimeMillis() + ".jpg");
+        } else {
+            Toast.makeText(HeadImageActivity.this, "检查SD卡是否挂载", Toast.LENGTH_SHORT).show();
+        }
+        return imgpath;
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-
-        if (requestCode == 100) {
-            if (resultCode == RESULT_OK) {
-                if (data != null) {
-                    if (hassdcard()) {
-                        cropRawPhoto(data.getData());
-
-                    }
-
-                   /*
-                      Toast.makeText(HeadImageActivity.this,"cuocuo、、、",Toast.LENGTH_SHORT).show();
-                        */
-                }
-            }
+        if (resultCode == RESULT_CANCELED) {
+            Toast.makeText(getApplication(), "取消", Toast.LENGTH_LONG).show();
+            return;
         }
-        if (requestCode==201){
-            Bundle extras=data.getExtras();
-            if (extras!=null){
-                Bitmap bmp= extras.getParcelable("data");
-                headimage.setImageBitmap(bmp);
-            }
+        switch (requestCode) {
+            //从手机获取图片
+            case 100:
+                if (resultCode == RESULT_OK) {
+                    if (data != null) {
+                        if (hassdcard()) {
+                            cropRawPhoto(data.getData());
+
+                        }
+                    }
+                }
+                break;
+            case 201:
+                extras = data.getExtras();
+                if (extras != null) {
+                    bmp = extras.getParcelable("data");
+                    headimage.setImageBitmap(bmp);
+                    mineBack.setDataCallBack(bmp);
+
+                }
+                break;
+            //拍照获取图片
+            case 520:
+                if (resultCode == RESULT_OK) {
+                    if (hassdcard()) {
+                        bitmap = BitmapFactory.decodeFile(file.getAbsolutePath());
+                        headimage.setImageBitmap(bitmap);
+                        mineBack.setDataCallBack(bitmap);
+                    }
+                }
+
+                break;
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
 
+    //检查SD卡是否挂载
     public boolean hassdcard() {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             return true;
@@ -140,6 +193,7 @@ public class HeadImageActivity extends AppCompatActivity {
         return false;
     }
 
+    //裁剪图片
     public void cropRawPhoto(Uri uri) {
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, "image/*");
@@ -151,10 +205,16 @@ public class HeadImageActivity extends AppCompatActivity {
         intent.putExtra("aspectY", 1);
 
         // outputX , outputY : 裁剪图片宽高
-        intent.putExtra("outputX", 200);
-        intent.putExtra("outputY", 200);
+        intent.putExtra("outputX", 300);
+        intent.putExtra("outputY", 300);
         intent.putExtra("return-data", true);
 
-        startActivityForResult(intent,201);
+        startActivityForResult(intent, 201);
+    }
+
+    static MineDataCallBack mineBack = null;
+
+    public static void setOnCallBackListener(MineDataCallBack mineDataCallBack) {
+        mineBack = mineDataCallBack;
     }
 }
