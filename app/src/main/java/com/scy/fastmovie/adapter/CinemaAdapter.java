@@ -22,7 +22,6 @@ import java.util.List;
 public class CinemaAdapter extends BaseAdapter {
     private Context context;
     private List<CinemaBean> data=new ArrayList<>();
-    private LayoutInflater inflater;
     public void setData(List<CinemaBean> data) {
         this.data = data;
         notifyDataSetChanged();
@@ -30,7 +29,6 @@ public class CinemaAdapter extends BaseAdapter {
 
     public CinemaAdapter(Context context) {
         this.context = context;
-        inflater=LayoutInflater.from(context);
     }
 
     @Override
@@ -56,7 +54,7 @@ public class CinemaAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder=null;
         if (convertView==null){
-            convertView=inflater.inflate(R.layout.cinema_item, null);
+            convertView=LayoutInflater.from(context).inflate(R.layout.cinema_item, null);
             viewHolder=new ViewHolder();
             viewHolder.cinema_nm= (TextView) convertView.findViewById(R.id.cinema_nm);
             viewHolder.cinema_addr= (TextView) convertView.findViewById(R.id.cinema_addr);

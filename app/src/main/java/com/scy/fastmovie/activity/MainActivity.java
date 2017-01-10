@@ -13,7 +13,7 @@ import android.util.Log;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
+import java.util.List;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -41,6 +41,7 @@ import com.scy.fastmovie.utils.NetWorkUtils;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements BDLocationListener{
+
 
 
 
