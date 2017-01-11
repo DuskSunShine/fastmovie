@@ -93,7 +93,7 @@ public class HotAdapter extends BaseAdapter {
             long time=timestamp.getTime();
             Date date=new Date();
             long curTime=date.getTime();
-            if (data.get(position).getSc()!=0){
+//            if (data.get(position).getSc()!=0){
                 if (curTime-time>0){
                     viewHolder.tv_audience.setText("观众");
                     viewHolder.buy_ticket.setText("购票");
@@ -101,7 +101,7 @@ public class HotAdapter extends BaseAdapter {
                     viewHolder.tv_audience.setText("点映");
                     viewHolder.buy_ticket.setText("预售");
                 }
-            }
+//            }
             String path=data.get(position).getImg();
             String[] split = path.split("/w.h/");
             String imgUrl=split[0]+"/"+split[1];
@@ -140,7 +140,7 @@ public class HotAdapter extends BaseAdapter {
             viewHolder.buy_ticket.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    stcall.onRelativeClick(((TextView)v).getText()+"/111/"+data.get(p).getNm());
+                    stcall.onRelativeClick(data.get(p),((TextView)v).getText().toString());
                 }
             });
         }
@@ -154,7 +154,7 @@ public class HotAdapter extends BaseAdapter {
         scall=call;
     }
     public static interface CallText{
-        public void onRelativeClick(String path);
+        public void onRelativeClick(HotFragmentBean.DataBean.HotBean databean,String flag);
     }
     public static CallText stcall=null;
     public static void setOnRelativeClickListener(CallText call){

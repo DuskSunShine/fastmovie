@@ -1,8 +1,6 @@
 [
     {
-        "outputFile": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ko\\values-ko.xml",
-        "outputFile": "C:\\studio\\fastmovie\\ptr_lib\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-ko\\values-ko.xml",
-        "outputFile": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ko\\values-ko.xml",
+        "outputFile": "F:\\android\\fastmovie\\ptr_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-ko\\values-ko.xml",
         "map": [
             {
                 "to": {
@@ -13,7 +11,7 @@
                     "endOffset": 116
                 },
                 "from": {
-                    "file": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "file": "F:\\android\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -32,7 +30,7 @@
                     "endOffset": 183
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "file": "F:\\android\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -51,27 +49,7 @@
                     "endOffset": 252
                 },
                 "from": {
-                    "file": "E:\\AndroidStudioProjects\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
-                    "file": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 121,
-                        "endColumn": 66,
-                        "endOffset": 183
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 188,
-                    "endColumn": 68,
-                    "endOffset": 252
-                },
-                "from": {
-                    "file": "E:\\AndroidS\\androidtools\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
+                    "file": "F:\\android\\fastmovie\\ptr_lib\\build\\intermediates\\bundles\\debug\\res\\values-ko\\values-ko.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

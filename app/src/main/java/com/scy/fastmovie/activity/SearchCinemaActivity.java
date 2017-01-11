@@ -18,6 +18,7 @@ import com.scy.fastmovie.baseurl.BaseUrl;
 import com.scy.fastmovie.bean.SearchCinemaBean;
 import com.scy.fastmovie.bean.SearchResultBean;
 import com.scy.fastmovie.httpapiservice.HttpApiService;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,7 @@ public class SearchCinemaActivity extends AppCompatActivity implements PullToRef
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_cinema);
+        ShuJu.activitys.add(this);
         initViews();
         setSupportActionBar(cinema_toolbar);
         search_cinema_list.setMode(PullToRefreshBase.Mode.PULL_FROM_END);

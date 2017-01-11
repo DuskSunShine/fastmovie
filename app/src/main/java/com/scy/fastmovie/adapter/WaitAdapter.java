@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.bean.HotFragmentBean;
 import com.scy.fastmovie.bean.WaitFragmentBean;
 import com.scy.fastmovie.customviews.MyTextView;
 
@@ -133,10 +134,12 @@ public class WaitAdapter extends BaseAdapter {
                     scall.onRelativeClick(data.get(p).getVideourl());
                 }
             });
+            final int i=position;
+            final TextView tv=viewHolder.buy_ticket;
             viewHolder.buy_ticket.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    stcall.onRelativeClick(((TextView)v).getText()+"/111/"+data.get(p).getNm());
+                    stcall.onRelativeClick(data.get(i),tv.getText().toString());
                 }
             });
         }
@@ -152,7 +155,7 @@ public class WaitAdapter extends BaseAdapter {
         scall=call;
     }
     public static interface CallText{
-        public void onRelativeClick(String path);
+        public void onRelativeClick(WaitFragmentBean.DataBean.ComingBean databean, String flag);
     }
     public static CallText stcall=null;
     public static void setOnRelativeClickListener(CallText call){

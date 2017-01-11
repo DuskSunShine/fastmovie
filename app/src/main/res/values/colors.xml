@@ -10,4 +10,5 @@
     <color name="yellow">#f9de16</color>
     <color name="gray">#ccc</color>
     <color name="h">#f9f7f7</color>
+    <color name="translucent_background">#60000000</color>
 </resources>

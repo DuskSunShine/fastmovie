@@ -18,13 +18,12 @@
        android:background="@color/colorPrimary">
        <com.makeramen.roundedimageview.RoundedImageView
            android:id="@+id/userhead"
-           android:layout_width="80dp"
-           android:layout_height="80dp"
+           android:layout_width="60dp"
+           android:layout_height="60dp"
            app:riv_corner_radius="50dp"
            app:riv_border_color="#fff"
            app:riv_border_width="1dp"
            android:layout_centerVertical="true"
-           android:src="@mipmap/adu"
            android:layout_marginLeft="20dp"
            app:riv_oval="true"
            android:scaleType="centerCrop"

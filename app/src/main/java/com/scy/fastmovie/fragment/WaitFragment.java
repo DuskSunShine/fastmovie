@@ -18,14 +18,18 @@ import android.widget.Toast;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.activity.BuyActivity;
 import com.scy.fastmovie.activity.HotItemDetaiActivity;
 import com.scy.fastmovie.adapter.WaitAdapter;
 import com.scy.fastmovie.adapter.WaitMostAdapter;
 import com.scy.fastmovie.adapter.WaitYuGaoAdapter;
 import com.scy.fastmovie.baseurl.BaseUrl;
+import com.scy.fastmovie.bean.MovieDaoBean;
+import com.scy.fastmovie.bean.MovieDaoBeanDao;
 import com.scy.fastmovie.bean.WaitFragmentBean;
 import com.scy.fastmovie.bean.WaitMostBean;
 import com.scy.fastmovie.bean.WaitYuGaoBean;
+import com.scy.fastmovie.db.MovieDbManager;
 import com.scy.fastmovie.httpapiservice.HttpApiService;
 import com.scy.fastmovie.utils.NetWorkUtils;
 
@@ -97,9 +101,19 @@ public class WaitFragment extends Fragment implements PullToRefreshBase.OnRefres
         });
         WaitAdapter.setOnRelativeClickListener(new WaitAdapter.CallText() {
             @Override
-            public void onRelativeClick(String path) {
-                String[] split = path.split("/111/");
-                Toast.makeText(context, split[0]+"'"+split[1]+"'"+"电影票成功", Toast.LENGTH_SHORT).show();
+            public void onRelativeClick(WaitFragmentBean.DataBean.ComingBean databean, String flag) {
+                MovieDaoBeanDao dao = MovieDbManager.getDao(context);
+                List<MovieDaoBean> list = dao.queryBuilder().where(MovieDaoBeanDao.Properties.Movie_id.eq(databean.getId())).list();
+                if (list.size()!=0){
+                    Toast.makeText(context, "该电影已经买过，不可重复购买", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Intent intent=new Intent(context,BuyActivity.class);
+                intent.putExtra("flag",flag);
+                intent.putExtra("movie",databean);
+                intent.putExtra("tag","wait");
+                startActivity(intent);
+                ((AppCompatActivity)context).overridePendingTransition(0,0);
             }
         });
 

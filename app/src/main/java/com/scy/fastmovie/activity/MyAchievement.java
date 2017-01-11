@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.scy.fastmovie.R;
+import com.scy.fastmovie.interfaces.ShuJu;
 
 public class MyAchievement extends AppCompatActivity {
 
@@ -12,6 +13,7 @@ public class MyAchievement extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_achievement);
+        ShuJu.activitys.add(this);
     }
 
     public void back(View view) {

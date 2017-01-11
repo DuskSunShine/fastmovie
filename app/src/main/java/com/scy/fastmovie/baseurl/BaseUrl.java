@@ -18,5 +18,5 @@ public class BaseUrl {
     public static final String PIAO="http://m.maoyan.com/newGuide/maoyanpiaofang";
     //热映http://api.maoyan.com/mmdb/movie/v3/list/
     public static final String HOT="http://api.maoyan.com/mmdb/movie/v3/list/hot.json?";
-    public static final String PIAO="http://piaofang.maoyan.com";
+//    public static final String PIAO="http://piaofang.maoyan.com";
 }

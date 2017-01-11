@@ -28,4 +28,9 @@
     <string name="xiepin">写评论...</string>
     <string name="fabiao">发表</string>
     <string name="search_cinema">查找影院</string>
+    <string name="yushou">预售</string>
+    <string name="xiangkan">想看</string>
+    <string name="sure">确定</string>
+    <string name="daipingjia">待评价</string>
+    <string name="pingjia">评价</string>
 </resources>
