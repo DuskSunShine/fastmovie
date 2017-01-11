@@ -19,4 +19,5 @@ public class BaseUrl {
     //热映http://api.maoyan.com/mmdb/movie/v3/list/
     public static final String HOT="http://api.maoyan.com/mmdb/movie/v3/list/hot.json?";
 //    public static final String PIAO="http://piaofang.maoyan.com";
+
 }

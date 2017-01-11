@@ -99,6 +99,9 @@
         <activity
             android:name=".activity.HotItemDetaiActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.HotItemDetaiActivity"
+            android:screenOrientation="landscape"></activity>
         <activity android:name=".activity.PiaoFangActivity" />
         <activity android:name=".activity.DiscoverItemActivity" />
         <activity android:name=".activity.DiscoverItemActivity" />
@@ -138,6 +141,8 @@
             android:name=".activity.BuyActivity"
             android:theme="@style/YinAppTheme" />
         <activity android:name=".activity.PingJiaDetailActivity"></activity>
+        <activity android:name=".activity.SearchCinemaActivity" />
+        <activity android:name=".activity.SeeCinemaActivity"></activity>
     </application>
 
 </manifest>
