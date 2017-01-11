@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.scy.fastmovie.activity.SeeCinemaActivity">
-
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -23,13 +23,15 @@
                 android:scaleType="centerCrop"
                 android:background="@null"
                 android:src="@mipmap/back"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:onClick="backtwo"/>
             <TextView
                 android:id="@+id/see_cinema_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:ellipsize="end"
+                android:text="www"
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:gravity="center_vertical"
@@ -45,7 +47,31 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="13dp"
-                android:layout_marginEnd="13dp" />
+                android:layout_marginEnd="13dp" 
+                android:onClick="click"/>
         </RelativeLayout>
+       
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:clipChildren="false"
+        android:layerType="software"
+        android:gravity="center"
+        android:background="@color/cardview_dark_background">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/mViewPager"
+            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:clipChildren="false">
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
+    <TextView
+        android:gravity="center"
+        android:id="@+id/see_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 </LinearLayout>
